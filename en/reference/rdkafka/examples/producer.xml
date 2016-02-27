@@ -1,0 +1,26 @@
+ <section xml:id="rdkafka.examples-producer">
+  <title>Producer</title>
+  <para>
+   This example shows how to use the <link linkend="class.rdkafka-kafkaconsumer">producer</link>.
+   <example>
+    <title>Producer example</title>
+    <programlisting role="php">
+<![CDATA[
+<?php
+
+$rk = new RdKafka\Producer();
+$rk->setLogLevel(LOG_DEBUG);
+$rk->addBrokers("127.0.0.1");
+
+$topic = $rk->newTopic("test");
+
+for ($i = 0; $i < 10; $i++) {
+    $topic->produce(RD_KAFKA_PARTITION_UA, 0, "Message $i");
+}
+
+?>
+]]>
+    </programlisting>
+   </example>
+  </para>
+ </section>

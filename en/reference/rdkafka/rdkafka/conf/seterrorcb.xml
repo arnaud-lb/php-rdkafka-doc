@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Revision$ -->
+
+<refentry xml:id="rdkafka-conf.seterrorcb" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <refnamediv>
+  <refname>RdKafka\Conf::setErrorCb</refname>
+  <refpurpose>Set error callback</refpurpose>
+ </refnamediv>
+
+ <refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+   <modifier>public</modifier> <type>void</type><methodname>RdKafka\Conf::setErrorCb</methodname>
+   <methodparam><type>callable</type><parameter>callback</parameter></methodparam>
+  </methodsynopsis>
+  <para>
+   Set error callback. The error callback is used by librdkafka to signal ciritcal errors back to the application.
+  </para>
+
+ </refsect1>
+
+ <refsect1 role="parameters">
+  &reftitle.parameters;
+  <variablelist>
+   <varlistentry>
+    <term><parameter>callback</parameter> (<type>callable</type>)</term>
+    <listitem>
+     <para>
+      A <type>callable</type> with the following signature:
+      <programlisting role="php">
+<![CDATA[
+<?php
+/**
+ * @param object $kafka
+ * @param int $err
+ * @param string $reason
+ */
+function ($kafka, $err, $reason);
+]]>
+      </programlisting>
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+ </refsect1>
+
+ <refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+   Returns no value.
+  </para>
+ </refsect1>
+
+ <refsect1 role="examples">
+  &reftitle.examples;
+  <example>
+   <title><function>RdKafka\Conf::setErrorCb</function> example</title>
+   <programlisting role="php">
+<![CDATA[
+<?php
+$conf->setErrorCb(function ($kafka, $err, $reason) {
+    printf("Kafka error: %s (reason: %s)\n", rd_kafka_err2str($err), $reason);
+});
+?>
+]]>
+   </programlisting>
+  </example>
+ </refsect1>
+
+
+</refentry>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:1
+sgml-indent-data:t
+indent-tabs-mode:nil
+sgml-parent-document:nil
+sgml-default-dtd-file:"~/.phpdoc/manual.ced"
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+vim600: syn=xml fen fdm=syntax fdl=2 si
+vim: et tw=78 syn=sgml
+vi: ts=1 sw=1
+-->

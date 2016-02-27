@@ -1,0 +1,6 @@
+<chapter xml:id="rdkafka.examples-low-level-consumer" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>Low-level consumer</title>
+ &reference.rdkafka.examples.low-level-consumer.basic;
+ &reference.rdkafka.examples.low-level-consumer.at-least-once;
+ &reference.rdkafka.examples.low-level-consumer.multi;
+ </chapter>

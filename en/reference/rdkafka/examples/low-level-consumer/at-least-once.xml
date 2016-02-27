@@ -1,0 +1,33 @@
+ <section xml:id="rdkafka.examples-low-level-consumer-at-least-once">
+  <title>Low level consumer: At least once consuming</title>
+  <para>
+   This example shows how to consume messages at least once. This is achieved
+   by committing offsets only after a message has been successfully consumed.
+   <example>
+    <title>Low-level consumer: at least once consuming example</title>
+    <programlisting role="php">
+<![CDATA[
+<?php
+
+// Disable committing offsets automatically
+$topicConf->set('auto.commit.enable', 'false');
+
+$topic = $rk->newTopic("test", $topicConf);
+
+// ...
+
+$message = $rk->consume(0, 120*1000);
+
+handle_message($message);
+
+// After successfully consuming the message, schedule offset store.
+// Offset is actually committed after 'auto.commit.interval.ms'
+// milliseconds.
+$topic->offsetStore($message->partition, $message->offset);
+?>
+]]>
+    </programlisting>
+   </example>
+  </para>
+ </section>
+

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Revision$ -->
+
+<refentry xml:id="rdkafka.addbrokers" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <refnamediv>
+  <refname>RdKafka::addBrokers</refname>
+  <refpurpose>Add brokers</refpurpose>
+ </refnamediv>
+
+ <refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+   <modifier>public</modifier> <type>integer</type><methodname>RdKafka::addBrokers</methodname>
+   <methodparam><type>string</type><parameter>broker_list</parameter></methodparam>
+  </methodsynopsis>
+  <para>
+   Adds one or more brokers to the kafka handle's list of initial boostrap brokers.
+  </para>
+  <para>
+   Additional brokers will be discovered automatically as soon as rdkafka connects to a broker by querying the broker metadata.
+  </para>
+  <para>
+   If a broker name resolves to multiple addresses (and possibly address families) all will be used for connection attempts in round-robin fashion.
+  </para>
+ </refsect1>
+
+ <refsect1 role="parameters">
+  &reftitle.parameters;
+  <variablelist>
+   <varlistentry>
+    <term><parameter>broker_list</parameter></term>
+    <listitem>
+     <para>
+      Comma-separated list of brokers in the format: <code>&lt;broker1&gt;,&lt;broker2&gt;,...</code>
+     </para>
+     <para>
+      Each broker is in either the host or URL based format:
+      <simplelist>
+       <listitem>
+        <code>&lt;host&gt;:[&lt;port&gt;]</code>
+       </listitem>
+       <listitem>
+        <code>&lt;proto&gt;://&lt;host&gt;[:&lt;port&gt;]</code>
+       </listitem>
+      </simplelist>
+     </para>
+     <para>
+      <code>&lt;proto&gt;</code> is either <code>PLAINTEXT</code>, <code>SSL</code>, <code>SASL</code>, or <code>SASL_PLAINTEXT</code>.
+     </para>
+     <para>The two formats can be mixed but ultimately the value of the <code>security.protocol</code> config property decides what brokers are allowed.
+     </para>
+     <para>
+      Examples:
+      <simplelist>
+       <listitem>
+        <code>"broker1:10000,broker2"</code>
+       </listitem>
+       <listitem>
+        <code>"SSL://broker3:9000,ssl://broker2"</code>
+       </listitem>
+      </simplelist>
+     </para>
+     <note>
+      <para>
+       Brokers may also be defined with the <code>metadata.broker.list</code> or <code>bootstrap.servers</code> configuration property (preferred method).
+      </para>
+     </note>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+ </refsect1>
+
+ <refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+   Returns the number of brokers successfully added.
+  </para>
+ </refsect1>
+
+ <refsect1 role="examples">
+  &reftitle.examples;
+  <example>
+   <title><function>RdKafka::addBrokers</function> example</title>
+   <programlisting role="php">
+<![CDATA[
+<?php
+$kafka->addBrokers("broker1:10000,broker2");
+
+$kafka->addBrokers("SSL://broker3:9000,ssl://broker2");
+?>
+]]>
+   </programlisting>
+  </example>
+ </refsect1>
+
+
+</refentry>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:1
+sgml-indent-data:t
+indent-tabs-mode:nil
+sgml-parent-document:nil
+sgml-default-dtd-file:"~/.phpdoc/manual.ced"
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+vim600: syn=xml fen fdm=syntax fdl=2 si
+vim: et tw=78 syn=sgml
+vi: ts=1 sw=1
+-->
