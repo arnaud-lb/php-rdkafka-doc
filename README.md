@@ -9,6 +9,9 @@ The documentation can be read at https://arnaud-lb.github.io/php-rdkafka/phpdoc/
 ## Building documentation
 
 - Install PHP documentor: https://wiki.php.net/doc/phd/install
-- Build the docs by running ./build.sh
-- The output is placed in ./output/php-chunked-xhtml
+- Build the docs by running ``./build.sh``
+- The output is placed in ``./output/php-chunked-xhtml``
 
+This is a stripped-down version of the PHP documentation that can be found here:
+https://svn.php.net/viewvc/phpdoc/. The goal would be to merge it there
+once the required quality is achieved.
