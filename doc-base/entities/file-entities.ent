@@ -1253,6 +1253,7 @@
 <!ENTITY reference.rdkafka.rdkafka.entities.conf  SYSTEM 'file:////home/mention/doc-en/en/reference/rdkafka/rdkafka/entities.conf.xml'>
 <!ENTITY reference.rdkafka.rdkafka.getoutqlen     SYSTEM 'file:////home/mention/doc-en/en/reference/rdkafka/rdkafka/getoutqlen.xml'>
 <!ENTITY reference.rdkafka.rdkafka.entities.consumertopic SYSTEM 'file:////home/mention/doc-en/en/reference/rdkafka/rdkafka/entities.consumertopic.xml'>
+<!ENTITY reference.rdkafka.rdkafka.conf.setdrmsgcb SYSTEM 'file:////home/mention/doc-en/en/reference/rdkafka/rdkafka/conf/setdrmsgcb.xml'>
 <!ENTITY reference.rdkafka.rdkafka.conf.setdefaulttopicconf SYSTEM 'file:////home/mention/doc-en/en/reference/rdkafka/rdkafka/conf/setdefaulttopicconf.xml'>
 <!ENTITY reference.rdkafka.rdkafka.conf.setrebalancecb SYSTEM 'file:////home/mention/doc-en/en/reference/rdkafka/rdkafka/conf/setrebalancecb.xml'>
 <!ENTITY reference.rdkafka.rdkafka.conf.set       SYSTEM 'file:////home/mention/doc-en/en/reference/rdkafka/rdkafka/conf/set.xml'>

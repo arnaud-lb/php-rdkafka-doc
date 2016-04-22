@@ -65,6 +65,7 @@
  <function name='rdkafka\conf::__construct' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\conf::dump' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\conf::set' from='PECL rdkafka &gt;= 0.9.1'/>
+ <function name='rdkafka\conf::setdrmsgcb' from='PECL rdkafka &gt;= master'/>
  <function name='rdkafka\conf::seterrorcb' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\conf::setrebalancecb' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
  <function name='rdkafka\conf::setdefaulttopicconf' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>

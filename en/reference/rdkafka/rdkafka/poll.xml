@@ -25,7 +25,7 @@
    Events:
    <simplelist>
     <listitem>
-     Delivery report callbacks (if dr_cb/dr_msg_cb is configured) [producer]
+     Delivery report callbacks <methodname>RdKafka\Conf::setDrMsgCb</methodname> [producer]
     </listitem>
     <listitem>
      Error callbacks (<methodname>RdKafka\Conf::setErrorCb</methodname>)
