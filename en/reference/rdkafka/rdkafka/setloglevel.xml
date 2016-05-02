@@ -17,7 +17,7 @@
    Specifies the maximum logging level produced by internal kafka logging and debugging.
   </para>
   <para>
-   If the <code>"debug"</code> configuration property is set, the level is automatically adjusted to <constant>LOG_DEGUG</constant>.
+   If the <code>"debug"</code> configuration property is set, the level is automatically adjusted to <constant>LOG_DEBUG</constant>.
   </para>
  </refsect1>
 
