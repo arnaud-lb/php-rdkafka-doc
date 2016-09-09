@@ -29,7 +29,7 @@
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
   <para>
-   Returns the number of messages in the out qeueue.
+   Returns the number of messages in the out queue.
   </para>
  </refsect1>
 
