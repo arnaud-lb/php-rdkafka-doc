@@ -1,7 +1,7 @@
  <section xml:id="rdkafka.examples-producer">
   <title>Producer</title>
   <para>
-   This example shows how to use the <link linkend="class.rdkafka-kafkaconsumer">producer</link>.
+   This example shows how to use the <link linkend="class.rdkafka-kafkaproducer">producer</link>.
    <example>
     <title>Producer example</title>
     <programlisting role="php">
