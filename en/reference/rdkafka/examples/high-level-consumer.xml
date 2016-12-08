@@ -10,7 +10,7 @@
 
 $conf = new RdKafka\Conf();
 
-// Set a rebalance callback to log partition assignemts (optional)
+// Set a rebalance callback to log partition assignments (optional)
 $conf->setRebalanceCb(function (RdKafka\KafkaConsumer $kafka, $err, array $partitions = null) {
     switch ($err) {
         case RD_KAFKA_RESP_ERR__ASSIGN_PARTITIONS:
@@ -53,7 +53,7 @@ $consumer = new RdKafka\KafkaConsumer($conf);
 $consumer->subscribe(['test']);
 
 echo "Waiting for partition assignment... (make take some time when\n";
-echo "quickly re-joinging the group after leaving it.)\n";
+echo "quickly re-joining the group after leaving it.)\n";
 
 while (true) {
     $message = $consumer->consume(120*1000);
