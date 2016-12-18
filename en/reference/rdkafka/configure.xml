@@ -15,7 +15,7 @@
    extension:
    <programlisting role="shell">
 <![CDATA[
-$ sudo pecl install channel://pecl.php.net/rdkafka-alpha
+$ sudo pecl install rdkafka
 ]]>
    </programlisting>
   </para>
@@ -28,12 +28,6 @@ extension=rdkafka.so
 ]]>
    </programlisting>
   </para>
-
-  <note>
-   <para>
-    The PECL release currently supports only PHP 5. For PHP 7, prefer other installation methods.
-   </para>
-  </note>
 
  </section>
 
@@ -49,27 +43,27 @@ extension=rdkafka.so
    <member>php55-rdkafka</member>
    <member>php56-rdkafka</member>
    <member>php70-rdkafka</member>
+   <member>php71-rdkafka</member>
   </simplelist>
 
   <para>
-   For example, you might install the extension for PHP 7.0 using the following command:
+   For example, you might install the extension for PHP 7.1 using the following command:
    <programlisting role="shell">
 <![CDATA[
-$ brew install php70-rdkafka
+$ brew install php71-rdkafka
 ]]>
    </programlisting>
   </para>
  </section>
 
- <!--
  <section xml:id="rdkafka.installation.windows">
-  <title>Installing the MongoDB PHP Driver on Windows</title>
+  <title>Installing the rdkafka extension on Windows</title>
 
   <para>
    Precompiled binaries for each release are available from
    <link xlink:href="&url.pecl.package;rdkafka">PECL</link> for a variety of
    combinations of versions, thread safety, and VC libraries. Extract the
-   archive and put <filename>php_mongo.dll</filename> in your PHP extension
+   archive and put <filename>php_rdkfaka.dll</filename> in your PHP extension
    directory ("ext" by default).
   </para>
 
@@ -82,7 +76,6 @@ extension=php_rdkafka.dll
    </programlisting>
   </para>
  </section>
- -->
 
  <section xml:id="rdkafka.installation.manual">
   <title>Manually Installing the extension</title>
@@ -94,8 +87,6 @@ extension=php_rdkafka.dll
 <![CDATA[
 $ git clone https://github.com/arnaud-lb/php-rdkafka.git
 $ cd php-rdkafka
-$ # For PHP 7, checkout the php7 branch:
-$ # git checkout php7
 $ phpize
 $ ./configure
 $ make all -j 5
@@ -103,12 +94,6 @@ $ sudo make install
 ]]>
    </programlisting>
   </para>
-
-  <note>
-   <para>
-    For PHP 7, checkout the <code>php7</code> branch after <code>cd php-rdkafka</code>.
-   </para>
-  </note>
 
   <para>
    The last step will report where <filename>rdkafka.so</filename> has been
