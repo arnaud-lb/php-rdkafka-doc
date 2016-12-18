@@ -15,8 +15,8 @@
 
  <function name='rdkafka' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka::addbrokers' from='PECL rdkafka &gt;= 0.9.1'/>
- <function name='rdkafka::getmetadata' from='PECL rdkafka &gt;= master'/>
- <function name='rdkafka::getoutqlen' from='PECL rdkafka &gt;= master'/>
+ <function name='rdkafka::getmetadata' from='PECL rdkafka &gt;= 1.0.0'/>
+ <function name='rdkafka::getoutqlen' from='PECL rdkafka &gt;= 1.0.0'/>
  <function name='rdkafka::setloglevel' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka::newqueue' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka::newtopic' from='PECL rdkafka &gt;= 0.9.1'/>
@@ -65,10 +65,10 @@
  <function name='rdkafka\conf::__construct' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\conf::dump' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\conf::set' from='PECL rdkafka &gt;= 0.9.1'/>
- <function name='rdkafka\conf::setdrmsgcb' from='PECL rdkafka &gt;= master'/>
+ <function name='rdkafka\conf::setdrmsgcb' from='PECL rdkafka &gt;= 1.0.0'/>
  <function name='rdkafka\conf::seterrorcb' from='PECL rdkafka &gt;= 0.9.1'/>
- <function name='rdkafka\conf::setrebalancecb' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\conf::setdefaulttopicconf' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\conf::setrebalancecb' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\conf::setdefaulttopicconf' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
 
  <function name='rdkafka\topicconf' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\topicconf::__construct' from='PECL rdkafka &gt;= 0.9.1'/>
@@ -76,18 +76,18 @@
  <function name='rdkafka\topicconf::set' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\topicconf::setpartitioner' from='PECL rdkafka &gt;= 0.9.1'/>
 
- <function name='rdkafka\kafkaconsumer' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumer::__construct' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumer::assign' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumer::getassignment' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumer::commit' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumer::commitasync' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumer::consume' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumer::subscribe' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumer::getsubscription' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumer::unsubscribe' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumer::getmetadata' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumer::__destruct' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumer' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumer::__construct' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumer::assign' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumer::getassignment' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumer::commit' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumer::commitasync' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumer::consume' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumer::subscribe' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumer::getsubscription' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumer::unsubscribe' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumer::getmetadata' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumer::__destruct' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
 
  <function name='rdkafka\message' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\message::errstr' from='PECL rdkafka &gt;= 0.9.1'/>
@@ -123,14 +123,14 @@
  <function name='rdkafka\metadata\collection::rewind' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\metadata\collection::valid' from='PECL rdkafka &gt;= 0.9.1'/>
 
- <function name='rdkafka\topicpartition' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\topicpartition::__construct' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\topicpartition::gettopic' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\topicpartition::settopic' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\topicpartition::getpartition' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\topicpartition::setpartition' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\topicpartition::getoffset' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\topicpartition::setoffset' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\topicpartition' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\topicpartition::__construct' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\topicpartition::gettopic' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\topicpartition::settopic' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\topicpartition::getpartition' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\topicpartition::setpartition' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\topicpartition::getoffset' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\topicpartition::setoffset' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
 
  <function name='rdkafka\queue' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\queue::__construct' from='PECL rdkafka &gt;= 0.9.1'/>
@@ -148,10 +148,10 @@
  <function name='rdkafka\consumertopic::offsetstore' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\consumertopic::getname' from='PECL rdkafka &gt;= 0.9.1'/>
 
- <function name='rdkafka\kafkaconsumertopic' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumertopic::__construct' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumertopic::offsetstore' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumertopic::getname' from='PECL rdkafka &gt;= master, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumertopic' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumertopic::__construct' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumertopic::offsetstore' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumertopic::getname' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
 
  <function name='rdkafka\producertopic' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\producertopic::__construct' from='PECL rdkafka &gt;= 0.9.1'/>
