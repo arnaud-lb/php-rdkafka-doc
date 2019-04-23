@@ -71,6 +71,7 @@
  <function name='rdkafka\conf::setdefaulttopicconf' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
  <function name='rdkafka\conf::setconsumecb' from='PECL rdkafka &gt;= 3.1.0, librdkafka &gt;= 0.9'/>
  <function name='rdkafka\conf::setoffsetcommitcb' from='PECL rdkafka &gt;= 3.1.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\conf::setstatscb' from='PECL rdkafka &gt;= 3.0.5, librdkafka &gt;= 0.9'/>
 
  <function name='rdkafka\topicconf' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\topicconf::__construct' from='PECL rdkafka &gt;= 0.9.1'/>
