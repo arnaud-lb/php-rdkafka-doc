@@ -1265,6 +1265,7 @@
 <!ENTITY reference.rdkafka.rdkafka.kafkaconsumertopic.offsetstore SYSTEM 'file:////home/mention/doc-en/en/reference/rdkafka/rdkafka/kafkaconsumertopic/offsetstore.xml'>
 <!ENTITY reference.rdkafka.rdkafka.entities.message SYSTEM 'file:////home/mention/doc-en/en/reference/rdkafka/rdkafka/entities.message.xml'>
 <!ENTITY reference.rdkafka.rdkafka.message.errstr SYSTEM 'file:////home/mention/doc-en/en/reference/rdkafka/rdkafka/message/errstr.xml'>
+<!ENTITY reference.rdkafka.rdkafka.message.headers SYSTEM 'file:////home/mention/doc-en/en/reference/rdkafka/rdkafka/message/headers.xml'>
 <!ENTITY reference.rdkafka.rdkafka.entities.producertopic SYSTEM 'file:////home/mention/doc-en/en/reference/rdkafka/rdkafka/entities.producertopic.xml'>
 <!ENTITY reference.rdkafka.rdkafka.producertopic.produce SYSTEM 'file:////home/mention/doc-en/en/reference/rdkafka/rdkafka/producertopic/produce.xml'>
 <!ENTITY reference.rdkafka.rdkafka.producertopic.producev SYSTEM 'file:////home/mention/doc-en/en/reference/rdkafka/rdkafka/producertopic/producev.xml'>
