@@ -91,7 +91,7 @@
  <function name='rdkafka\kafkaconsumer::unsubscribe' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
  <function name='rdkafka\kafkaconsumer::getmetadata' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
  <function name='rdkafka\kafkaconsumer::__destruct' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumer::getconsumeroffsets' from='PECL rdkafka &gt;= 3.1.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumer::getcommitedoffsets' from='PECL rdkafka &gt;= 3.1.0, librdkafka &gt;= 0.9'/>
 
  <function name='rdkafka\message' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\message::errstr' from='PECL rdkafka &gt;= 0.9.1'/>
