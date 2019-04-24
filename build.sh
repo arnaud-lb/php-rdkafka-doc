@@ -1,8 +1,8 @@
 #!/bin/bash
-# svn co http://svn.php.net/repository/phpdoc/modules/doc-en
-# pear install doc.php.net/phd
-# pear install doc.php.net/phd_php
-# cd doc-en
+#copy current doc to not mess up files that have replacement mechanisms
+rm -rf /doc
+cp -R /php-rdkafka-doc /doc
+cd /doc
 
 # Set the path to PHP from environment or use which to discover it
 if [ "$PHP" == "" ];
