@@ -11,7 +11,8 @@
   &reftitle.description;
   <methodsynopsis>
    <modifier>public</modifier> <type>void</type><methodname>RdKafka\TopicConf::set</methodname>
-   <void />
+   <methodparam><type>string</type><parameter>name</parameter></methodparam>
+   <methodparam><type>string</type><parameter>value</parameter></methodparam>
   </methodsynopsis>
   <para>
    Set configuration property <parameter>name</parameter> to <parameter>value</parameter>.
