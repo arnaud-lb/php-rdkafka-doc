@@ -9,9 +9,6 @@
 <![CDATA[
 <?php
 
-// Disable committing offsets automatically
-$topicConf->set('auto.commit.enable', 'false');
-
 $topic = $rk->newTopic("test", $topicConf);
 
 // ...

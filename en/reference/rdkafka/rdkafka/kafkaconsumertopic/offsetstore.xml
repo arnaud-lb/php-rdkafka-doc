@@ -17,11 +17,6 @@
   <para>
    Store offset <parameter>offset</parameter> for topic partition <parameter>partition</parameter>. The offset will be commited (written) to the offset store according to <code>auto.commit.interval.ms</code>.
   </para>
-  <note>
-   <para>
-    <code>auto.commit.enable</code> must be set to <code>false</code> when using this API.
-   </para>
-  </note>
 
  </refsect1>
 
