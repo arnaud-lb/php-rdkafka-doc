@@ -59,6 +59,8 @@
  &reference.rdkafka.rdkafka.newtopic;
  &reference.rdkafka.rdkafka.poll;
  &reference.rdkafka.rdkafka.setloglevel;
+ &reference.rdkafka.rdkafka.querywatermarkoffsets;
+ &reference.rdkafka.rdkafka.offsetsfortimes;
 
 </phpdoc:classref>
 
