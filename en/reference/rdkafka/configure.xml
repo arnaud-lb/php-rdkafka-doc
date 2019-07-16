@@ -66,6 +66,10 @@ $ brew install php71-rdkafka
    archive and put <filename>php_rdkfaka.dll</filename> in your PHP extension
    directory ("ext" by default).
   </para>
+  <para>
+   To avoid problems, make sure to click on the DLL link on PECL (for the version you want to install),
+   in the DLL section, you will see for which PHP versions DLLs are provided.
+  </para>
 
   <para>
    Add the following line to your &php.ini; file:
