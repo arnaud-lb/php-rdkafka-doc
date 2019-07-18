@@ -11,7 +11,8 @@
         &reftitle.description;
         <methodsynopsis>
             <modifier>public</modifier> <type>array</type><methodname>RdKafka\KafkaConsumer::getCommitedOffsets</methodname>
-            <void />
+            <methodparam><type>array</type><parameter>topics</parameter></methodparam>
+            <methodparam><type>int</type><parameter>timeout_ms</parameter></methodparam>
         </methodsynopsis>
         <para>
             Returns the commited offsets for topics and partitions for a consumer group
@@ -25,7 +26,7 @@
                 <term><parameter>topics</parameter> (<type>array</type>)</term>
                 <listitem>
                     <para>
-                        Array of topic names.
+                        Array of <classname>RdKafka\TopicPartition</classname>.
                     </para>
                 </listitem>
             </varlistentry>
@@ -43,7 +44,7 @@
     <refsect1 role="returnvalues">
         &reftitle.returnvalues;
         <para>
-            Returns an array of <classname>RdKafka\TopicPartition</classname>
+            Returns an array of <classname>RdKafka\TopicPartition</classname> with their offsets
         </para>
     </refsect1>
 
