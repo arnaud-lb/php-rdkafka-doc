@@ -63,10 +63,14 @@ $ brew install php71-rdkafka
    Precompiled binaries for each release are available from
    <link xlink:href="&url.pecl.package;rdkafka">PECL</link> for a variety of
    combinations of versions, thread safety, and VC libraries. Extract the
-   archive and put <filename>php_rdkfaka.dll</filename> in your PHP extension
+   archive and put the <filename>php_rdkfaka.dll</filename> and <filename>librdkafka.dll</filename> files in your PHP extension
    directory ("ext" by default).
   </para>
-
+  <note>
+   <para>
+    Each precompiled binary works only for a specific PHP build. Please make sure to download the right one after opening the DLL link on <link xlink:href="&url.pecl.package;rdkafka">PECL</link>.
+   </para>
+  </note>
   <para>
    Add the following line to your &php.ini; file:
    <programlisting role="ini">
