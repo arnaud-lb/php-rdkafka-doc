@@ -1,8 +1,7 @@
 #!/bin/bash
 #copy current doc to not mess up files that have replacement mechanisms
-rm -rf /doc
-cp -R /php-rdkafka-doc /doc
-cd /doc
+rm -rf /php-rdkafka-doc/output
+cd /php-rdkafka-doc
 
 # Set the path to PHP from environment or use which to discover it
 if [ "$PHP" == "" ];
