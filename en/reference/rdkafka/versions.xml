@@ -24,7 +24,7 @@
  <function name='rdkafka::setlogger' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka::__destruct' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka::querywatermarkoffsets' from='PECL rdkafka &gt;= 3.1.1'/>
- <function name='rdkafka::offsetsfortimes' from='PECL rdkafka &gt;= 3.1.3'/>
+ <function name='rdkafka::offsetsfortimes' from='PECL rdkafka &gt;= 3.1.3, librdkafka &gt;= 0.9.4'/>
 
  <function name='rdkafka\consumer' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\consumer::__construct' from='PECL rdkafka &gt;= 0.9.1'/>
@@ -93,7 +93,9 @@
  <function name='rdkafka\kafkaconsumer::unsubscribe' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
  <function name='rdkafka\kafkaconsumer::getmetadata' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
  <function name='rdkafka\kafkaconsumer::__destruct' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumer::getcommitedoffsets' from='PECL rdkafka &gt;= 3.1.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumer::getcommittedoffsets' from='PECL rdkafka &gt;= 3.1.0, librdkafka &gt;= 0.9'/>
+ <function name='rdkafka\kafkaconsumer::getoffsetpositions' from='PECL rdkafka &gt;= 3.1.3, librdkafka &gt;= 0.9.1'/>
+
 
  <function name='rdkafka\message' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\message::errstr' from='PECL rdkafka &gt;= 0.9.1'/>

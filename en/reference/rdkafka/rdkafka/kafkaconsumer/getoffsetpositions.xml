@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
 
-<refentry xml:id="rdkafka-kafkaconsumer.getcommitedoffsets" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+<refentry xml:id="rdkafka-kafkaconsumer.getoffsetpositions" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
     <refnamediv>
-        <refname>RdKafka\KafkaConsumer::getCommitedOffsets</refname>
-        <refpurpose>Returns the commited offsets</refpurpose>
+        <refname>RdKafka\KafkaConsumer::getOffsetPositions</refname>
+        <refpurpose>Retrieve the current offsets for topics / partitions</refpurpose>
     </refnamediv>
 
     <refsect1 role="description">
         &reftitle.description;
         <methodsynopsis>
-            <modifier>public</modifier> <type>array</type><methodname>RdKafka\KafkaConsumer::getCommitedOffsets</methodname>
+            <modifier>public</modifier> <type>array</type><methodname>RdKafka\KafkaConsumer::getOffsetPositions</methodname>
             <methodparam><type>array</type><parameter>topics</parameter></methodparam>
-            <methodparam><type>int</type><parameter>timeout_ms</parameter></methodparam>
         </methodsynopsis>
         <para>
-            Returns the commited offsets for topics and partitions for a consumer group
+            The offset field of each requested partition will be set to the offset
+            of the last consumed message + 1, or RD_KAFKA_OFFSET_INVALID in case there was
+            no previous message.
         </para>
     </refsect1>
 
@@ -27,14 +28,6 @@
                 <listitem>
                     <para>
                         Array of <classname>RdKafka\TopicPartition</classname>.
-                    </para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter>timeout_ms</parameter> (<type>int</type>)</term>
-                <listitem>
-                    <para>
-                        Timeout in milliseconds.
                     </para>
                 </listitem>
             </varlistentry>
@@ -51,7 +44,7 @@
     <refsect1 role="examples">
         &reftitle.examples;
         <example>
-            <title><function>RdKafka\KafkaConsumer::getCommitedOffsets</function> example</title>
+            <title><function>RdKafka\KafkaConsumer::getOffsetPositions</function> example</title>
             <programlisting role="php">
                 <![CDATA[
 <?php
@@ -62,7 +55,7 @@ $kafkaConsumer = new RdKafka\KafkaConsumer($conf);
 $topicPartition = new TopicPartition('myTopic', 0);
 $timeoutMs = 10000000;
 
-$topicPartitionsWithOffsets = $consumer->getCommittedOffsets([$topicPartition], $timeoutMs));
+$topicPartitionsWithOffsets = $consumer->getOffsetPositions([$topicPartition]));
 ?>
 ]]>
             </programlisting>
