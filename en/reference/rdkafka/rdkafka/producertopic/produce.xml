@@ -39,7 +39,7 @@
     <term><parameter>msgflags</parameter> (<type>integer</type>)</term>
     <listitem>
      <para>
-       Must be either 0 or RD_KAFKA_MSG_F_BLOCK (available from rdkafka 3.1.3, will block produce*() on message queue full).
+       Must be either 0 or RD_KAFKA_MSG_F_BLOCK (see <link linkend="rdkafka.constants">Constants</link>).
      </para>
     </listitem>
    </varlistentry>
