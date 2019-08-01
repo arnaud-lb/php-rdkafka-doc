@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
 
-<refentry xml:id="function.rd-kafka-errno2err" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+<refentry xml:id="rdkafka.setlogger" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
  <refnamediv>
-  <refname>rd_kafka_errno2err</refname>
-  <refpurpose>Convert the system errno to a kafka error code</refpurpose>
+  <refname>RdKafka::setLogger</refname>
+  <refpurpose>Choose logger</refpurpose>
   <warning>
    <simpara>This function has been <emphasis>DEPRECATED</emphasis>. Relying on this feature is highly discouraged.</simpara>
   </warning>
@@ -13,23 +13,22 @@
  <refsect1 role="description">
   &reftitle.description;
   <methodsynopsis>
-   <type>integer</type><methodname>rd_kafka_errno2err</methodname>
-   <methodparam><type>integer</type><parameter>errnox</parameter></methodparam>
+   <modifier>public</modifier> <type>void</type><methodname>RdKafka::setLogger</methodname>
+   <methodparam><type>integer</type><parameter>logger_id</parameter></methodparam>
   </methodsynopsis>
   <para>
-   Converts the system errno <parameter>errnox</parameter> to a kafka error code.
+   Logs according to logger id
   </para>
-
  </refsect1>
 
  <refsect1 role="parameters">
   &reftitle.parameters;
   <variablelist>
    <varlistentry>
-    <term><parameter>errnox</parameter> (<type>integer</type>)</term>
+    <term><parameter>logger_id</parameter> (<type>integer</type>)</term>
     <listitem>
      <para>
-      A system errno
+      Can be either <constant>RD_KAFKA_PARTITION_UA</constant> (print to stderr), <constant>RD_KAFKA_LOG_SYSLOG</constant> (print to syslog), <constant>RD_KAFKA_LOG_SYSLOG_PRINT</constant> (both).
      </para>
     </listitem>
    </varlistentry>
@@ -39,7 +38,7 @@
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
   <para>
-   Returns a kafka error code as an <type>integer</type>.
+   Returns no values.
   </para>
  </refsect1>
 
