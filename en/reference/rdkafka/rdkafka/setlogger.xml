@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
 
-<refentry xml:id="rdkafka.setloglevel" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+<refentry xml:id="rdkafka.setlogger" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
  <refnamediv>
-  <refname>RdKafka::setLogLevel</refname>
-  <refpurpose>Set log level</refpurpose>
+  <refname>RdKafka::setLogger</refname>
+  <refpurpose>Choose logger</refpurpose>
   <warning>
    <simpara>This function has been <emphasis>DEPRECATED</emphasis>. Relying on this feature is highly discouraged.</simpara>
   </warning>
@@ -13,14 +13,11 @@
  <refsect1 role="description">
   &reftitle.description;
   <methodsynopsis>
-   <modifier>public</modifier> <type>void</type><methodname>RdKafka::setLogLevel</methodname>
-   <methodparam><type>integer</type><parameter>level</parameter></methodparam>
+   <modifier>public</modifier> <type>void</type><methodname>RdKafka::setLogger</methodname>
+   <methodparam><type>integer</type><parameter>logger_id</parameter></methodparam>
   </methodsynopsis>
   <para>
-   Specifies the maximum logging level produced by internal kafka logging and debugging.
-  </para>
-  <para>
-   If the <code>"debug"</code> configuration property is set, the level is automatically adjusted to <constant>LOG_DEBUG</constant>.
+   Logs according to logger id
   </para>
  </refsect1>
 
@@ -28,10 +25,10 @@
   &reftitle.parameters;
   <variablelist>
    <varlistentry>
-    <term><parameter>level</parameter> (<type>integer</type>)</term>
+    <term><parameter>logger_id</parameter> (<type>integer</type>)</term>
     <listitem>
      <para>
-      Log level. Can take any <constant>LOG_*</constant> constant (see the <functionname>syslog</functionname> function).
+      Can be either <constant>RD_KAFKA_PARTITION_UA</constant> (print to stderr), <constant>RD_KAFKA_LOG_SYSLOG</constant> (print to syslog), <constant>RD_KAFKA_LOG_SYSLOG_PRINT</constant> (both).
      </para>
     </listitem>
    </varlistentry>
@@ -41,7 +38,7 @@
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
   <para>
-   Returns no value.
+   Returns no values.
   </para>
  </refsect1>
 
