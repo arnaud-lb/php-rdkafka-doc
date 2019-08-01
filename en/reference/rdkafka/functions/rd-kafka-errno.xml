@@ -5,6 +5,9 @@
  <refnamediv>
   <refname>rd_kafka_errno</refname>
   <refpurpose>Get the system errno</refpurpose>
+  <warning>
+   <simpara>This function has been <emphasis>DEPRECATED</emphasis>. Relying on this feature is highly discouraged.</simpara>
+  </warning>
  </refnamediv>
 
  <refsect1 role="description">
