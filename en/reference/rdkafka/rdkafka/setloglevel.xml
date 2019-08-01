@@ -5,6 +5,9 @@
  <refnamediv>
   <refname>RdKafka::setLogLevel</refname>
   <refpurpose>Set log level</refpurpose>
+  <warning>
+   <simpara>This function has been <emphasis>DEPRECATED</emphasis>. Relying on this feature is highly discouraged.</simpara>
+  </warning>
  </refnamediv>
 
  <refsect1 role="description">
