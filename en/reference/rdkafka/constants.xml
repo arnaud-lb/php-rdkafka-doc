@@ -891,6 +891,39 @@
      </simpara>
     </listitem>
    </varlistentry>
+   <varlistentry xml:id="constant.rd-kafka-purge-f-queue">
+    <term>
+     <constant>RD_KAFKA_PURGE_F_QUEUE</constant>
+     (<type>integer</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Purge messages in internal queues.
+     </simpara>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="constant.rd-kafka-purge-f-inflight">
+    <term>
+     <constant>RD_KAFKA_PURGE_F_INFLIGHT</constant>
+     (<type>integer</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Purge messages in-flight to or from the broker.
+     </simpara>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="constant.rd-kafka-purge-f-non-blocking">
+    <term>
+     <constant>RD_KAFKA_PURGE_F_NON_BLOCKING</constant>
+     (<type>integer</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Don't wait for background thread queue purging to finish.
+     </simpara>
+    </listitem>
+   </varlistentry>
   </variablelist>
  </para>
 </appendix>
