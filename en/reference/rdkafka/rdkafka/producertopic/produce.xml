@@ -39,7 +39,7 @@
     <term><parameter>msgflags</parameter> (<type>integer</type>)</term>
     <listitem>
      <para>
-      Must be 0
+       Must be either 0 or <constant>RD_KAFKA_MSG_F_BLOCK</constant>
      </para>
     </listitem>
    </varlistentry>
