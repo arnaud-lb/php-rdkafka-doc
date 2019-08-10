@@ -37,15 +37,10 @@ $conf->set('group.id', 'myConsumerGroup');
 // Initial list of Kafka brokers
 $conf->set('metadata.broker.list', '127.0.0.1');
 
-$topicConf = new RdKafka\TopicConf();
-
 // Set where to start consuming messages when there is no initial offset in
 // offset store or the desired offset is out of range.
 // 'smallest': start from the beginning
-$topicConf->set('auto.offset.reset', 'smallest');
-
-// Set the configuration to use for subscribed/assigned topics
-$conf->setDefaultTopicConf($topicConf);
+$conf->set('auto.offset.reset', 'smallest');
 
 $consumer = new RdKafka\KafkaConsumer($conf);
 
