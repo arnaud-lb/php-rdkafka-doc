@@ -29,7 +29,7 @@
     <term><parameter>timeout_ms</parameter> (<type>integer</type>)</term>
     <listitem>
      <para>
-      Specifies the maximum amount of time (in milliseconds) that the call will block waiting for events. For non-blocking calls, provide 0 as <parameter>timeout_ms</parameter>. To wait indefinately for an event, provide -1.
+      Specifies the maximum amount of time (in milliseconds) that the call will block. To wait indefinitely provide -1.
      </para>
     </listitem>
    </varlistentry>
