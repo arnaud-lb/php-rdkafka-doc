@@ -58,6 +58,7 @@
  &reference.rdkafka.rdkafka.newqueue;
  &reference.rdkafka.rdkafka.newtopic;
  &reference.rdkafka.rdkafka.poll;
+ &reference.rdkafka.rdkafka.flush;
  &reference.rdkafka.rdkafka.purge;
  &reference.rdkafka.rdkafka.setloglevel;
  &reference.rdkafka.rdkafka.setlogger;
