@@ -18,7 +18,7 @@
   </para>
   <note>
    <para>
-    You must set <constant>log.queue</constant> to <constant>true</constant> in <classname>RdKafka\Conf</classname> for this to work.
+    HINT: The extension takes care of setting <constant>log.queue</constant> to <constant>true</constant> in <classname>RdKafka\Conf</classname> which is needed for this.
    </para>
   </note>
  </refsect1>
