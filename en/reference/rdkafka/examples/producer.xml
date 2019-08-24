@@ -27,4 +27,24 @@ while ($rk->getOutQLen() > 0) {
     </programlisting>
    </example>
   </para>
+     <para>
+         For a proper shutdown of the <link linkend="class.rdkafka-kafkaproducer">producer</link> add this before exiting the producer.
+         <example>
+             <title>Shutdown example</title>
+             <programlisting role="php">
+                 <![CDATA[
+<?php
+
+//optionally purge messages not yet sent to the broker
+$rk->purge(RD_KAFKA_PURGE_F_QUEUE);
+
+//this is highly recommended, flush waits for all outstanding producer requests to be handled
+//when not using flush, you might lose messages and message errors
+$rk->flush(10000);
+
+?>
+]]>
+             </programlisting>
+         </example>
+     </para>
  </section>
