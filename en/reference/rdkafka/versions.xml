@@ -21,11 +21,11 @@
  <function name='rdkafka::newqueue' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka::newtopic' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka::poll' from='PECL rdkafka &gt;= 0.9.1'/>
- <function name='rdkafka::purge' from='PECL rdkafka &gt;= 3.1.3, librdkafka &gt;= 0.11.5'/>
+ <function name='rdkafka::purge' from='PECL rdkafka &gt;= 4.0.0, librdkafka &gt;= 0.11.5'/>
  <function name='rdkafka::setlogger' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka::__destruct' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka::querywatermarkoffsets' from='PECL rdkafka &gt;= 3.1.1'/>
- <function name='rdkafka::offsetsfortimes' from='PECL rdkafka &gt;= 3.1.3, librdkafka &gt;= 0.9.4'/>
+ <function name='rdkafka::offsetsfortimes' from='PECL rdkafka &gt;= 4.0.0, librdkafka &gt;= 0.9.4'/>
 
  <function name='rdkafka\consumer' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\consumer::__construct' from='PECL rdkafka &gt;= 0.9.1'/>
@@ -36,7 +36,7 @@
  <function name='rdkafka\consumer::newtopic' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\consumer::outqlen' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\consumer::poll' from='PECL rdkafka &gt;= 0.9.1'/>
- <function name='rdkafka\consumer::purge' from='PECL rdkafka &gt;= 3.1.3, librdkafka &gt;= 0.11.5'/>
+ <function name='rdkafka\consumer::purge' from='PECL rdkafka &gt;= 4.0.0, librdkafka &gt;= 0.11.5'/>
  <function name='rdkafka\consumer::setlogger' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\consumer::__destruct' from='PECL rdkafka &gt;= 0.9.1'/>
 
@@ -49,7 +49,7 @@
  <function name='rdkafka\producer::newtopic' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\producer::outqlen' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\producer::poll' from='PECL rdkafka &gt;= 0.9.1'/>
- <function name='rdkafka\producer::purge' from='PECL rdkafka &gt;= 3.1.3, librdkafka &gt;= 0.11.5'/>
+ <function name='rdkafka\producer::purge' from='PECL rdkafka &gt;= 4.0.0, librdkafka &gt;= 0.11.5'/>
  <function name='rdkafka\producer::setlogger' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\producer::__destruct' from='PECL rdkafka &gt;= 0.9.1'/>
 
@@ -97,8 +97,8 @@
  <function name='rdkafka\kafkaconsumer::getmetadata' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
  <function name='rdkafka\kafkaconsumer::__destruct' from='PECL rdkafka &gt;= 1.0.0, librdkafka &gt;= 0.9'/>
  <function name='rdkafka\kafkaconsumer::getcommittedoffsets' from='PECL rdkafka &gt;= 3.1.0, librdkafka &gt;= 0.9'/>
- <function name='rdkafka\kafkaconsumer::getoffsetpositions' from='PECL rdkafka &gt;= 3.1.3, librdkafka &gt;= 0.9.1'/>
- <function name='rdkafka\kafkaconsumer::offsetsfortimes' from='PECL rdkafka &gt;= 3.1.3, librdkafka &gt;= 0.9.4'/>
+ <function name='rdkafka\kafkaconsumer::getoffsetpositions' from='PECL rdkafka &gt;= 4.0.0, librdkafka &gt;= 0.9.1'/>
+ <function name='rdkafka\kafkaconsumer::offsetsfortimes' from='PECL rdkafka &gt;= 4.0.0, librdkafka &gt;= 0.9.4'/>
 
 
  <function name='rdkafka\message' from='PECL rdkafka &gt;= 0.9.1'/>
