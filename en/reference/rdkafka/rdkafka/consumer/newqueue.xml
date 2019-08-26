@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
 
-<refentry xml:id="rdkafka.newqueue" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+<refentry xml:id="rdkafka-consumer.newqueue" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
  <refnamediv>
-  <refname>RdKafka::newQueue</refname>
+  <refname>RdKafka\Consumer::newQueue</refname>
   <refpurpose>Create a new message queue instance</refpurpose>
  </refnamediv>
 
  <refsect1 role="description">
   &reftitle.description;
   <methodsynopsis>
-   <modifier>public</modifier> <classname>RdKafka\Queue</classname> <methodname>RdKafka::newQueue</methodname>
+   <modifier>public</modifier> <classname>RdKafka\Queue</classname> <methodname>RdKafka\Consumer::newQueue</methodname>
    <void />
   </methodsynopsis>
   <para>
