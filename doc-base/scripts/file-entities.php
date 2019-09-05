@@ -49,11 +49,11 @@ set_time_limit(0);
 $not_windows = (0 < strcasecmp('WIN',PHP_OS));
 
 // The dir for PHP. If the cygwin wasn't compiled on Cygwin, the path needs to be stripped.
-$out_dir = ($not_windows  || !strcasecmp('CYGWIN',php_uname()))? '/php-rdkafka-doc/doc-base' : abs_path(strip_cygdrive('/php-rdkafka-doc/doc-base'));
-$src_dir = ($not_windows  || !strcasecmp('CYGWIN',php_uname()))? '/php-rdkafka-doc/doc-base'  : abs_path(strip_cygdrive('/php-rdkafka-doc/doc-base'));
-$base_dir = ($not_windows || !strcasecmp('CYGWIN',php_uname()))? '/php-rdkafka-doc/doc-base' : abs_path(strip_cygdrive('/php-rdkafka-doc/doc-base'));
-$root_dir = ($not_windows || !strcasecmp('CYGWIN',php_uname()))? '/php-rdkafka-doc' : abs_path(strip_cygdrive('/php-rdkafka-doc'));
-$only_dir = ($not_windows || !strcasecmp('CYGWIN',php_uname()))? '/php-rdkafka-doc/en' : abs_path(strip_cygdrive('/php-rdkafka-doc/en'));
+$out_dir = ($not_windows  || !strcasecmp('CYGWIN',php_uname()))? '/home/mention/doc-en/doc-base' : abs_path(strip_cygdrive('/home/mention/doc-en/doc-base'));
+$src_dir = ($not_windows  || !strcasecmp('CYGWIN',php_uname()))? '/home/mention/doc-en/doc-base'  : abs_path(strip_cygdrive('/home/mention/doc-en/doc-base'));
+$base_dir = ($not_windows || !strcasecmp('CYGWIN',php_uname()))? '/home/mention/doc-en/doc-base' : abs_path(strip_cygdrive('/home/mention/doc-en/doc-base'));
+$root_dir = ($not_windows || !strcasecmp('CYGWIN',php_uname()))? '/home/mention/doc-en' : abs_path(strip_cygdrive('/home/mention/doc-en'));
+$only_dir = ($not_windows || !strcasecmp('CYGWIN',php_uname()))? '/home/mention/doc-en/en' : abs_path(strip_cygdrive('/home/mention/doc-en/en'));
 
 // The language encoding to use
 $encoding = 'utf-8';
