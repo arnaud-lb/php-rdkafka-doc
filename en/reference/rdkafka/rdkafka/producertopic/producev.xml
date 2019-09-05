@@ -19,6 +19,10 @@
   </methodsynopsis>
   <para>
    Produce and send a single message to broker with headers.
+   Produce and send a single message to broker.
+   Since producing is asynchronous, you should call <link linkend="rdkafka.flush">flush</link> before
+   you destroy the producer. Otherwise, any outstanding messages will be
+   silently discarded.
   </para>
   <para>
    This is a async and non-blocking.

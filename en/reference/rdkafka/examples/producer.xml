@@ -28,7 +28,9 @@ while ($rk->getOutQLen() > 0) {
    </example>
   </para>
      <para>
-         For a proper shutdown of the <link linkend="class.rdkafka-kafkaproducer">producer</link> add this before exiting the producer.
+         For a proper shutdown of the <link linkend="class.rdkafka-kafkaproducer">producer</link> we need to wait
+         until all outstanding produce requests, et.al, are completed. This should typically be done [after using] a producer instance
+         to make sure all queued and in-flight produce requests are completed  before terminating.
          <example>
              <title>Shutdown example</title>
              <programlisting role="php">
