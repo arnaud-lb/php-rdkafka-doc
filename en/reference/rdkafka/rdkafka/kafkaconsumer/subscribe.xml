@@ -41,7 +41,7 @@
   </para>
   <note>
    <para>
-    The default configuration for subscribed topics can be changed by calling <function>RdKafka\Conf::setDefaultTopicConf</function>.
+    The default configuration for subscribed topics can be changed by calling <function>RdKafka\Conf::set</function>.
    </para>
   </note>
 
@@ -79,7 +79,7 @@
    <programlisting role="php">
 <![CDATA[
 <?php
-$kafkaConsumer->assign([
+$kafkaConsumer->subscribe([
     "logs",
     "^myPfx[0-9]_.*",
 ]);

@@ -10,7 +10,7 @@
    The extension support both PHP 5 and PHP 7.
   </para>
   <para>
-   The extension requires <link xlink:href="https://github.com/edenhill/librdkafka">librdkafka</link> &gt;= 0.8 for basic functionality, and &gt;= 0.9 for the high level consumer.
+   The extension requires <link xlink:href="https://github.com/edenhill/librdkafka">librdkafka</link> &gt;= 0.11.x.
   </para>
  </section>
 
