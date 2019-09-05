@@ -5,6 +5,9 @@
  <refnamediv>
   <refname>RdKafka\Conf::setDefaultTopicConf</refname>
   <refpurpose>Set default topic configuration</refpurpose>
+  <warning>
+   <simpara>This function has been <emphasis>DEPRECATED</emphasis>. Relying on this feature is highly discouraged. Set default topic settings normally like global configuration settings.</simpara>
+  </warning>
  </refnamediv>
 
  <refsect1 role="description">
