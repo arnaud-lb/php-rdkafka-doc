@@ -55,7 +55,6 @@
  &reference.rdkafka.rdkafka.addbrokers;
  &reference.rdkafka.rdkafka.getmetadata;
  &reference.rdkafka.rdkafka.getoutqlen;
- &reference.rdkafka.rdkafka.newqueue;
  &reference.rdkafka.rdkafka.newtopic;
  &reference.rdkafka.rdkafka.poll;
  &reference.rdkafka.rdkafka.flush;
