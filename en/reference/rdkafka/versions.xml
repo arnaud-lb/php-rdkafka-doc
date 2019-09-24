@@ -98,7 +98,7 @@
  <function name='rdkafka\kafkaconsumer::getcommittedoffsets' from='PECL rdkafka &gt;= 3.1.0, librdkafka &gt;= 0.9'/>
  <function name='rdkafka\kafkaconsumer::getoffsetpositions' from='PECL rdkafka &gt;= 4.0.0, librdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\kafkaconsumer::offsetsfortimes' from='PECL rdkafka &gt;= 4.0.0, librdkafka &gt;= 0.9.4'/>
-
+ <function name='rdkafka\kafkaconsumer::close' from='PECL rdkafka &gt;= 4.0.0, librdkafka &gt;= 0.9.1'/>
 
  <function name='rdkafka\message' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\message::errstr' from='PECL rdkafka &gt;= 0.9.1'/>
