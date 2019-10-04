@@ -157,6 +157,7 @@
  <function name='rdkafka\consumertopic::consumestart' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\consumertopic::consumestop' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\consumertopic::consume' from='PECL rdkafka &gt;= 0.9.1'/>
+ <function name='rdkafka\consumertopic::consumebatch' from='PECL rdkafka &gt;= 4.0.0'/>
  <function name='rdkafka\consumertopic::offsetstore' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\consumertopic::getname' from='PECL rdkafka &gt;= 0.9.1'/>
 
