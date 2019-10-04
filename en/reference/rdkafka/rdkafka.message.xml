@@ -41,7 +41,15 @@
     </fieldsynopsis>
     <fieldsynopsis>
      <modifier>public</modifier>
+     <varname linkend="rdkafka-message.props.len">len</varname>
+    </fieldsynopsis>
+    <fieldsynopsis>
+     <modifier>public</modifier>
      <varname linkend="rdkafka-message.props.topic-name">topic_name</varname>
+    </fieldsynopsis>
+    <fieldsynopsis>
+     <modifier>public</modifier>
+     <varname linkend="rdkafka-message.props.timestamp">timestamp</varname>
     </fieldsynopsis>
     <fieldsynopsis>
      <modifier>public</modifier>
@@ -60,7 +68,7 @@
      <varname linkend="rdkafka-message.props.offset">offset</varname>
     </fieldsynopsis>
 
-    
+
     <classsynopsisinfo role="comment">&Methods;</classsynopsisinfo>
     <xi:include xpointer="xmlns(db=http://docbook.org/ns/docbook) xpointer(id('class.rdkafka-message')/db:refentry/db:refsect1[@role='description']/descendant::db:methodsynopsis[not(@role='procedural')])" />
    </classsynopsis>
@@ -68,7 +76,7 @@
 
   </section>
 
-  
+
 <!-- {{{ RdKafka\Message properties -->
   <section xml:id="rdkafka-message.props">
    &reftitle.properties;
@@ -79,10 +87,22 @@
       <para>Error code (<type>integer</type>)</para>
      </listitem>
     </varlistentry>
+    <varlistentry xml:id="rdkafka-message.props.len">
+     <term><varname>len</varname></term>
+     <listitem>
+      <para>Length (<type>integer</type>)</para>
+     </listitem>
+    </varlistentry>
     <varlistentry xml:id="rdkafka-message.props.topic-name">
      <term><varname>topic_name</varname></term>
      <listitem>
       <para>Topic name (<type>string</type>)</para>
+     </listitem>
+    </varlistentry>
+    <varlistentry xml:id="rdkafka-message.props.timestamp">
+     <term><varname>timestamp</varname></term>
+     <listitem>
+      <para>Timestamp (<type>integer</type>)</para>
      </listitem>
     </varlistentry>
     <varlistentry xml:id="rdkafka-message.props.partition">
