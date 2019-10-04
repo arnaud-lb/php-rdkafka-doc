@@ -27,4 +27,34 @@ while ($rk->getOutQLen() > 0) {
     </programlisting>
    </example>
   </para>
+     <para>
+         For a proper shutdown of the <link linkend="class.rdkafka-kafkaproducer">producer</link> we need to wait
+         until all outstanding produce requests, et.al, are completed. This should typically be done [after using] a producer instance
+         to make sure all queued and in-flight produce requests are completed  before terminating.
+         <example>
+             <title>Shutdown example</title>
+             <programlisting role="php">
+                 <![CDATA[
+<?php
+
+// Purge messages not yet sent to the broker (this is a safe operation to do)
+$rk->purge(RD_KAFKA_PURGE_F_QUEUE);
+
+// You can also purge messages that are inflight, not that this poses risks
+// Purge messages in-flight to or from the broker.
+// Purging these messages will void any future acknowledgements from the
+// broker, making it impossible for the application to know if these
+// messages were successfully delivered or not.
+// Retrying these messages may lead to duplicates.
+$rk->purge(RD_KAFKA_PURGE_F_QUEUE);
+
+// This is highly recommended, flush waits for all outstanding producer requests to be handled
+// when not using flush, you might lose messages and message errors
+$rk->flush(10000);
+
+?>
+]]>
+             </programlisting>
+         </example>
+     </para>
  </section>
