@@ -31,31 +31,6 @@ extension=rdkafka.so
 
  </section>
 
- <section xml:id="rdkafka.installation.homebrew">
-  <title>Installing the extension on OSX with Homebrew</title>
-
-  <para>
-   If you are using <link xlink:href="&url.mac.homebrew;">Homebrew</link>, the PHP tap includes formulae for installing the driver on various PHP versions.
-  </para>
-
-  <simplelist>
-   <member>php54-rdkafka</member>
-   <member>php55-rdkafka</member>
-   <member>php56-rdkafka</member>
-   <member>php70-rdkafka</member>
-   <member>php71-rdkafka</member>
-  </simplelist>
-
-  <para>
-   For example, you might install the extension for PHP 7.1 using the following command:
-   <programlisting role="shell">
-<![CDATA[
-$ brew install php71-rdkafka
-]]>
-   </programlisting>
-  </para>
- </section>
-
  <section xml:id="rdkafka.installation.windows">
   <title>Installing the rdkafka extension on Windows</title>
 
