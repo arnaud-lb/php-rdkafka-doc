@@ -2,6 +2,12 @@
   <title>Producer</title>
   <para>
    This example shows how to use the <link linkend="class.rdkafka-kafkaproducer">producer</link>.
+      <note>
+          <para>
+              Since version 4.0, proper shutdown is responsibility of the application. Please check the
+              shutdown examples below the producer example. Without proper shutdown, messages can get lost.
+          </para>
+      </note>
    <example>
     <title>Producer example</title>
     <programlisting role="php">
