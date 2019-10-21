@@ -2,24 +2,42 @@
   <title>Producer</title>
   <para>
    This example shows how to use the <link linkend="class.rdkafka-kafkaproducer">producer</link>.
+      <note>
+          <para>
+              Since version 4.0, proper shutdown (using flush) is responsibility of the application. Please check the
+              example below. Without proper shutdown, messages can get lost.
+          </para>
+      </note>
    <example>
     <title>Producer example</title>
     <programlisting role="php">
 <![CDATA[
 <?php
 
-$rk = new RdKafka\Producer();
-$rk->addBrokers("127.0.0.1");
+$conf = new RdKafka\Conf();
+$conf->set('metadata.broker.list', 'localhost:9092');
 
-$topic = $rk->newTopic("test");
+//If you need to produce exactly once and want to keep the original produce order, uncomment the line below
+//$conf->set('enable.idempotence', 'true');
+
+$producer = new RdKafka\Producer($conf);
+
+$topic = $producer->newTopic("test");
 
 for ($i = 0; $i < 10; $i++) {
     $topic->produce(RD_KAFKA_PARTITION_UA, 0, "Message $i");
-    $rk->poll(0);
+    $producer->poll(0);
 }
 
-while ($rk->getOutQLen() > 0) {
-    $rk->poll(50);
+for ($flushRetries = 0; $flushRetries < 10; $flushRetries++) {
+    $result = $producer->flush(10000);
+    if (RD_KAFKA_RESP_ERR_NO_ERROR === $result) {
+        break;
+    }
+}
+
+if (RD_KAFKA_RESP_ERR_NO_ERROR !== $result) {
+    throw new \RuntimeException('Was unable to flush, messages might be lost!');
 }
 
 ?>
@@ -28,11 +46,10 @@ while ($rk->getOutQLen() > 0) {
    </example>
   </para>
      <para>
-         For a proper shutdown of the <link linkend="class.rdkafka-kafkaproducer">producer</link> we need to wait
-         until all outstanding produce requests, et.al, are completed. This should typically be done [after using] a producer instance
-         to make sure all queued and in-flight produce requests are completed  before terminating.
+         If for some reason you wan't to purge messages that are queued to be sent to the producer or inflight,
+         you can use <link linkend="rdkafka.purge">purge</link> to do so.
          <example>
-             <title>Shutdown example</title>
+             <title>Purge example</title>
              <programlisting role="php">
                  <![CDATA[
 <?php
@@ -47,11 +64,6 @@ $rk->purge(RD_KAFKA_PURGE_F_QUEUE);
 // messages were successfully delivered or not.
 // Retrying these messages may lead to duplicates.
 $rk->purge(RD_KAFKA_PURGE_F_QUEUE);
-
-// This is highly recommended, flush waits for all outstanding producer requests to be handled
-// when not using flush, you might lose messages and message errors
-$rk->flush(10000);
-
 ?>
 ]]>
              </programlisting>
