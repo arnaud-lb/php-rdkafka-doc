@@ -63,7 +63,7 @@ $rk->purge(RD_KAFKA_PURGE_F_QUEUE);
 // broker, making it impossible for the application to know if these
 // messages were successfully delivered or not.
 // Retrying these messages may lead to duplicates.
-$rk->purge(RD_KAFKA_PURGE_F_QUEUE);
+$rk->purge(RD_KAFKA_PURGE_F_INFLIGHT);
 ?>
 ]]>
              </programlisting>
