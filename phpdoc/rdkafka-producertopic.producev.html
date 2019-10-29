@@ -44,13 +44,17 @@
   <p class="para rdfs-comment">
    Produce and send a single message to broker with headers.
    Produce and send a single message to broker.
-   Since producing is asynchronous, you should call <a href="rdkafka.flush.html" class="link">flush</a> before
-   you destroy the producer. Otherwise, any outstanding messages will be
-   silently discarded.
   </p>
   <p class="para">
    This is a async and non-blocking.
   </p>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   <p class="para">
+    Since producing is asynchronous, you should call <a href="rdkafka.flush.html" class="link">flush</a> before
+    you destroy the producer. Otherwise, any outstanding messages will be
+    silently discarded.
+   </p>
+  </p></blockquote>
  </div>
 
 
@@ -129,6 +133,14 @@
    Returns no value.
   </p>
  </div>
+
+
+  <div class="refsect1 errors" id="refsect1-rdkafka-producertopic.producev-errors">
+    <h3 class="title">Errors/Exceptions</h3>
+    <ul class="simplelist">
+        <li class="member">Throws <a href="class.rdkafka-exception.html" class="classname">RdKafka\Exception</a> on errors.</li>
+    </ul>
+  </div>
 
 
  <div class="refsect1 examples" id="refsect1-rdkafka-producertopic.producev-examples">
