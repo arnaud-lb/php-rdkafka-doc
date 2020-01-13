@@ -42,7 +42,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><parameter>low</parameter> (<type>integer</type>)</term>
+    <term><parameter role="reference">low</parameter> (<type>integer</type>)</term>
     <listitem>
      <para>
       The oldest/beginning offset for the partition
@@ -58,7 +58,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><parameter role="reference">timeout_ms</parameter> (<type>integer</type>)</term>
+    <term><parameter>timeout_ms</parameter> (<type>integer</type>)</term>
     <listitem>
      <para>
       Timeout in millisecounds for this operation.
