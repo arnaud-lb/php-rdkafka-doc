@@ -39,8 +39,8 @@ $conf->set('metadata.broker.list', '127.0.0.1');
 
 // Set where to start consuming messages when there is no initial offset in
 // offset store or the desired offset is out of range.
-// 'smallest': start from the beginning
-$conf->set('auto.offset.reset', 'smallest');
+// 'earliest': start from the beginning
+$conf->set('auto.offset.reset', 'earliest');
 
 $consumer = new RdKafka\KafkaConsumer($conf);
 
