@@ -16,6 +16,7 @@
    <methodparam><type>string</type><parameter>payload</parameter></methodparam>
    <methodparam choice="opt"><type>string</type><parameter>key</parameter> <initializer>&null;</initializer></methodparam>
    <methodparam><type>array</type><parameter>headers</parameter></methodparam>
+   <methodparam><type>integer</type><parameter>timestamp_ms</parameter></methodparam>
   </methodsynopsis>
   <para>
    Produce and send a single message to broker with headers.
@@ -73,6 +74,14 @@
     <listitem>
      <para>
       Accepts only associative array or null
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><parameter>timestamp_ms</parameter> (<type>integer</type>)</term>
+    <listitem>
+     <para>
+      Timestamp that should be set for the message, if not set, the broker will set it
      </para>
     </listitem>
    </varlistentry>
