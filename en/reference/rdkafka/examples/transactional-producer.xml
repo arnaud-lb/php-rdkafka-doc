@@ -91,4 +91,13 @@ if (RD_KAFKA_RESP_ERR_NO_ERROR !== $error) {
          After the current transaction has been committed or aborted a new
          transaction may be started by calling <methodname>RdKafka\Producer::beginTransaction</methodname> again.
      </para>
+     <note>
+         <para>
+             If you have a local docker setup with just one broker, be sure to use these envs in your docker-compose.yml for your broker:
+             <programlisting role="yml">
+KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+             </programlisting>
+         </para>
+     </note>
  </section>
