@@ -30,21 +30,11 @@ for ($i = 0; $i < 10; $i++) {
     $producer->poll(0);
 }
 
+//Any outstanding messages will be flushed (delivered) before actually committing the transaction.
 $error = $producer->commitTransaction(10000);
 
 if (RD_KAFKA_RESP_ERR_NO_ERROR !== $error) {
     //check what kind of error it was e.g. $error->isFatal(), etc. and act accordingly (retry, abort, etc.)
-}
-
-for ($flushRetries = 0; $flushRetries < 10; $flushRetries++) {
-    $result = $producer->flush(10000);
-    if (RD_KAFKA_RESP_ERR_NO_ERROR === $result) {
-        break;
-    }
-}
-
-if (RD_KAFKA_RESP_ERR_NO_ERROR !== $result) {
-    throw new \RuntimeException('Was unable to flush, messages might be lost!');
 }
 
 ?>
