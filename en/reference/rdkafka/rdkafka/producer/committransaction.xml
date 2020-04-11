@@ -14,7 +14,15 @@
             <methodparam><type>integer</type><parameter>timeout_ms</parameter></methodparam>
         </methodsynopsis>
         <para>
-            Commit current transaction
+            Commit the current transaction (as started with <methodname>RdKafka\Producer::beginTransaction</methodname>).
+            Any outstanding messages will be flushed (delivered) before actually
+            committing the transaction.
+
+            If any of the outstanding messages fail permanently the current
+            transaction will enter the abortable error state and this
+            function will return an abortable error, in this case the application
+            must call <methodname>RdKafka\Producer::abortTransaction</methodname> before attempting a new
+            transaction with <methodname>RdKafka\Producer::beginTransaction</methodname>.
         </para>
     </refsect1>
 

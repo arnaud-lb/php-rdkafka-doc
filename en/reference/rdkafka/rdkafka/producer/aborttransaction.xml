@@ -14,7 +14,8 @@
             <methodparam><type>integer</type><parameter>timeout_ms</parameter></methodparam>
         </methodsynopsis>
         <para>
-            Abort current transaction
+            This function should also be used to recover from non-fatal abortable transaction errors.
+            Any outstanding messages will be purged and fail with <constant>RD_KAFKA_RESP_ERR__PURGE_INFLIGHT</constant> or <constant>RD_KAFKA_RESP_ERR__PURGE_QUEUE</constant>.
         </para>
     </refsect1>
 

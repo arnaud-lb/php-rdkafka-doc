@@ -14,8 +14,15 @@
             <void />
         </methodsynopsis>
         <para>
-            Begin a transaction
-        </para>
+        <methodname>RdKafka\Producer::initTransactions</methodname> must have been called successfully (once)
+        before this function is called.
+
+        Any messages produced, offsets sent (rd_kafka_send_offsets_to_transaction()),
+        etc, after the successful return of this function will be part of
+        the transaction and committed or aborted atomatically.
+
+        Finish the transaction by calling <methodname>RdKafka\Producer::commitTransaction</methodname> or
+        abort the transaction by calling <methodname>RdKafka\Producer::abortTransaction</methodname>.
     </refsect1>
 
     <refsect1 role="returnvalues">
