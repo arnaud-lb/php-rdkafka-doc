@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
 
-<refentry xml:id="rdkafka-producer.inittransactions" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+<refentry xml:id="rdkafka-producer.aborttransaction" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
     <refnamediv>
-        <refname>RdKafka\Producer::initTransactions</refname>
-        <refpurpose>Initialize transactions</refpurpose>
+        <refname>RdKafka\Producer::abortTransaction</refname>
+        <refpurpose>Abort current transaction</refpurpose>
     </refnamediv>
 
     <refsect1 role="description">
         &reftitle.description;
         <methodsynopsis>
-            <modifier>public</modifier> <type>int</type><methodname>RdKafka\Producer::initTransactions</methodname>
+            <modifier>public</modifier> <type>int</type><methodname>RdKafka\Producer::abortTransaction</methodname>
             <methodparam><type>integer</type><parameter>timeout_ms</parameter></methodparam>
         </methodsynopsis>
         <para>
-            Initialize transactions for the producer instance.
-            This function ensures any transactions initiated by previous instances
-            of the producer with the same transactional.id are completed.
-            If the previous instance failed with a transaction in progress the
-            previous transaction will be aborted.
-            This function needs to be called before any other transactional or
-            produce functions are called when the transactional.id is configured.
+            Abort current transaction
         </para>
     </refsect1>
 
@@ -31,7 +25,7 @@
                 <term><parameter>timeout_ms</parameter> (<type>integer</type>)</term>
                 <listitem>
                     <para>
-                        Specifies the amount of time (in milliseconds) that the call will try to initialize transaction capability.
+                        Specifies the amount of time (in milliseconds) that the call will try to abort the current transaction.
                     </para>
                 </listitem>
             </varlistentry>
