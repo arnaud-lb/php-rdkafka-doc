@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
 
-<refentry xml:id="rdkafka-kafkaerror.getname" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+<refentry xml:id="rdkafka-kafkaerrorexception.getmessage" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
     <refnamediv>
-        <refname>RdKafka\KafkaError::getName</refname>
-        <refpurpose>Get error name</refpurpose>
+        <refname>RdKafka\KafkaErrorException::getMessage</refname>
+        <refpurpose>Get error message</refpurpose>
     </refnamediv>
 
     <refsect1 role="description">
         &reftitle.description;
         <methodsynopsis>
-            <modifier>public</modifier> <type>string</type><methodname>RdKafka\KafkaError::getName</methodname>
+            <modifier>public</modifier> <type>string</type><methodname>RdKafka\KafkaErrorException::getMessage</methodname>
             <void />
         </methodsynopsis>
         <para>
-            Get error name
+            Get error message
         </para>
     </refsect1>
 </refentry>

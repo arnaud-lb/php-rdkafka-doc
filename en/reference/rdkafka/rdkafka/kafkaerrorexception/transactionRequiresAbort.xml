@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
 
-<refentry xml:id="rdkafka-kafkaerror.isfatal" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+<refentry xml:id="rdkafka-kafkaerrorexception.transactionrequiresabort" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
     <refnamediv>
-        <refname>RdKafka\KafkaError::isFatal</refname>
-        <refpurpose>Check if error is fatal</refpurpose>
+        <refname>RdKafka\KafkaErrorException::transactionRequiresAbort</refname>
+        <refpurpose>Check if transaction requires abort</refpurpose>
     </refnamediv>
 
     <refsect1 role="description">
         &reftitle.description;
         <methodsynopsis>
-            <modifier>public</modifier> <type>bool</type><methodname>RdKafka\KafkaError::isFatal</methodname>
+            <modifier>public</modifier> <type>bool</type><methodname>RdKafka\KafkaErrorException::transactionRequiresAbort</methodname>
             <void />
         </methodsynopsis>
         <para>
-            Check if error is fatal
+            Check if transaction requires abort
         </para>
     </refsect1>
 </refentry>

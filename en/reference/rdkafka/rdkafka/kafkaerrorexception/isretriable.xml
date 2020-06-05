@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
 
-<refentry xml:id="rdkafka-kafkaerror.getmessage" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+<refentry xml:id="rdkafka-kafkaerrorexception.isretriable" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
     <refnamediv>
-        <refname>RdKafka\KafkaError::getMessage</refname>
-        <refpurpose>Get error message</refpurpose>
+        <refname>RdKafka\KafkaErrorException::isRetriable</refname>
+        <refpurpose>Check if error is retriable</refpurpose>
     </refnamediv>
 
     <refsect1 role="description">
         &reftitle.description;
         <methodsynopsis>
-            <modifier>public</modifier> <type>string</type><methodname>RdKafka\KafkaError::getMessage</methodname>
+            <modifier>public</modifier> <type>bool</type><methodname>RdKafka\KafkaErrorException::isRetriable</methodname>
             <void />
         </methodsynopsis>
         <para>
-            Get error message
+            Check if error is retriable
         </para>
     </refsect1>
 </refentry>

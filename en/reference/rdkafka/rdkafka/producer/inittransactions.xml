@@ -10,7 +10,7 @@
     <refsect1 role="description">
         &reftitle.description;
         <methodsynopsis>
-            <modifier>public</modifier> <type>int</type><methodname>RdKafka\Producer::initTransactions</methodname>
+            <modifier>public</modifier> <type>void</type><methodname>RdKafka\Producer::initTransactions</methodname>
             <methodparam><type>integer</type><parameter>timeout_ms</parameter></methodparam>
         </methodsynopsis>
         <para>
@@ -41,7 +41,7 @@
     <refsect1 role="returnvalues">
         &reftitle.returnvalues;
         <para>
-            In case of success returns <constant>RD_KAFKA_RESP_ERR_NO_ERROR</constant>, in case of error a <classname>RdKafka\KafkaError</classname> will be returned.
+            In case of success returns <literal>NULL</literal>, in case of error a <classname>RdKafka\KafkaErrorException</classname> will be thrown.
         </para>
     </refsect1>
 

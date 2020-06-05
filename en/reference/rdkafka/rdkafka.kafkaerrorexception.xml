@@ -3,31 +3,31 @@
 
 <phpdoc:classref xml:id="class.rdkafka-kafkaerror" xmlns:phpdoc="http://php.net/ns/phpdoc" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude">
 
- <title>The RdKafka\KafkaError class</title>
- <titleabbrev>RdKafka\KafkaError</titleabbrev>
+ <title>The RdKafka\KafkaErrorException class</title>
+ <titleabbrev>RdKafka\KafkaErrorException</titleabbrev>
 
  <partintro>
 
 <!-- {{{ RdKafka\KafkaError intro -->
-  <section xml:id="rdkafka-kafkaerror.intro">
+  <section xml:id="rdkafka-kafkaerrorexception.intro">
    &reftitle.intro;
    <para>
-    If an error occured for a transactional producer action, this class will be returned
+    If an error occured for a transactional producer action, exception will be thrown
    </para>
   </section>
 <!-- }}} -->
 
-  <section xml:id="rdkafka-kafkaerror.synopsis">
+  <section xml:id="rdkafka-kafkaerrorexception.synopsis">
    &reftitle.classsynopsis;
 
 <!-- {{{ Synopsis -->
    <classsynopsis>
-    <ooclass><classname>RdKafka\KafkaError</classname></ooclass>
+    <ooclass><classname>RdKafka\KafkaErrorException</classname></ooclass>
 
 <!-- {{{ Class synopsis -->
     <classsynopsisinfo>
      <ooclass>
-      <classname>RdKafka\KafkaError</classname>
+      <classname>RdKafka\KafkaErrorException</classname>
      </ooclass>
     </classsynopsisinfo>
 <!-- }}} -->
@@ -41,7 +41,7 @@
 
  </partintro>
 
- &reference.rdkafka.rdkafka.entities.kafkaerror;
+ &reference.rdkafka.rdkafka.entities.kafkaerrorexception;
 
 </phpdoc:classref>
 
