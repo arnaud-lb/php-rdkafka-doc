@@ -14,7 +14,7 @@
    <methodparam><type>callable</type><parameter>callback</parameter></methodparam>
   </methodsynopsis>
   <para>
-   Set log callback. You will get events according to <constant>log_evel</constant> that was set in <classname>RdKafka\Conf</classname>
+   Set log callback. You will get events according to <constant>log_level</constant> that was set in <classname>RdKafka\Conf</classname>
   </para>
   <note>
    <para>
