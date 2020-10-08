@@ -15,7 +15,7 @@
     This class holds configuration for topic instances.
    </para>
    <para>
-    A list of available properties can be found on the <link xlink:href="https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md">librdkafka repository</link>. Note that available configuration properties and default values may change depending on the librdkafka version.
+    A list of available properties can be found on the <link xlink:href="https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md#topic-configuration-properties">librdkafka repository</link>. Note that available configuration properties and default values may change depending on the librdkafka version.
    </para>
   </section>
 <!-- }}} -->
