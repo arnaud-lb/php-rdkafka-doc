@@ -16,4 +16,5 @@ jobs:
                   path: 'php-rdkafka-doc'
             - name: 'Build'
               uses: 'docker'
-              image: 'Dockerfile'
+              with:
+                  image: 'Dockerfile'
