@@ -38,7 +38,7 @@ extension=rdkafka.so
    Precompiled binaries for each release are available from
    <link xlink:href="&url.pecl.package;rdkafka">PECL</link> for a variety of
    combinations of versions, thread safety, and VC libraries. Extract the
-   archive and put the <filename>php_rdkfaka.dll</filename> and <filename>librdkafka.dll</filename> files in your PHP extension
+   archive and put <filename>librdkafka.dll</filename> in the root PHP directory (same level as php.exe) and the <filename>php_rdkfaka.dll</filename> file in your PHP extension
    directory ("ext" by default).
   </para>
   <note>
