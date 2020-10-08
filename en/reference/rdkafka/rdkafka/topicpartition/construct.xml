@@ -13,7 +13,7 @@
    <modifier>public</modifier> <methodname>RdKafka\TopicPartition::__construct</methodname>
    <methodparam><type>string</type><parameter>topic</parameter></methodparam>
    <methodparam><type>integer</type><parameter>partition</parameter></methodparam>
-   <methodparam choice="opt"><type>integer</type><parameter>offset</parameter><initializer>&null;</initializer></methodparam>
+   <methodparam choice="opt"><type>integer</type><parameter>offset</parameter><initializer>0</initializer></methodparam>
   </constructorsynopsis>
   <para>
    Constructor
