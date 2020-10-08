@@ -3,6 +3,8 @@
 #build the doc
 ./build.sh
 
+exit 0
+
 #change permissions for apache
 chgrp -R www-data /php-rdkafka-doc
 

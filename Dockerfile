@@ -6,4 +6,4 @@ RUN pear install doc.php.net/PhD && pear install doc.php.net/PhD_PHP
 
 WORKDIR /php-rdkafka-doc
 
-ENTRYPOINT ./entrypoint.sh
+ENTRYPOINT ["./entrypoint.sh"]
