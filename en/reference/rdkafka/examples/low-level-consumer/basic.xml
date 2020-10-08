@@ -27,8 +27,8 @@ $topicConf->set('offset.store.method', 'broker');
 
 // Set where to start consuming messages when there is no initial offset in
 // offset store or the desired offset is out of range.
-// 'smallest': start from the beginning
-$topicConf->set('auto.offset.reset', 'smallest');
+// 'earliest': start from the beginning
+$topicConf->set('auto.offset.reset', 'earliest');
 
 $topic = $rk->newTopic("test", $topicConf);
 
