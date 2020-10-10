@@ -10,6 +10,8 @@ jobs:
         name: 'Build'
         runs-on: 'ubuntu-20.04'
         steps:
+            - name: Debug
+              run: 'pwd; ls -al'
             - name: 'Checkout'
               uses: 'actions/checkout@v2'
               with:
@@ -25,5 +27,3 @@ jobs:
               run: './php-rdkafka-doc/.github/workflows/push.sh'
               env:
                   GHA_DEPLOY_KEY: ${{ secrets.GHA_DEPLOY_KEY }}
-            - name: Debug
-              run: 'pwd; ls -l; export; ls -l ..'
