@@ -2,6 +2,9 @@
 
 set -e
 
+pwd
+ls -l
+
 cd php-rdkafka-doc
 
 #build the doc

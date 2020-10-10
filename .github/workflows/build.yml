@@ -16,3 +16,10 @@ jobs:
                   path: 'php-rdkafka-doc'
             - name: 'Build'
               uses: './php-rdkafka-doc/.github/actions/build'
+            - name: 'Checkout gh-pages'
+              uses: 'actions/checkout@v2'
+              with:
+                  ref: 'gh-pages'
+                  path: 'php-rdkafka-doc-gh-pages'
+            - name: 'Push'
+              run: './php-rdkafka-doc/.github/workflows/push.sh'
