@@ -15,6 +15,4 @@ jobs:
               with:
                   path: 'php-rdkafka-doc'
             - name: 'Build'
-              uses: 'docker'
-              with:
-                  image: 'Dockerfile'
+              users: './.github/actions/build'
