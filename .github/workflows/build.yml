@@ -15,4 +15,4 @@ jobs:
               with:
                   path: 'php-rdkafka-doc'
             - name: 'Build'
-              users: './.github/actions/build'
+              uses: './.github/actions/build'
