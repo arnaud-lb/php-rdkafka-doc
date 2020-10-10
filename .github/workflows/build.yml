@@ -15,6 +15,6 @@ jobs:
               with:
                   path: 'php-rdkafka-doc'
             - name: 'Debug'
-              runs: 'set -x; pwd; ls -l'
+              run: 'set -x; pwd; ls -l'
             - name: 'Build'
               uses: './.github/actions/build'
