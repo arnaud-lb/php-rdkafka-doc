@@ -1,8 +1,8 @@
 #!/bin/bash
 
-set -x
-pwd
-ls -l
+set -e
+
+cd php-rdkafka-doc
 
 #build the doc
 ./build.sh
