@@ -10,12 +10,11 @@ jobs:
         name: 'Build'
         runs-on: 'ubuntu-20.04'
         steps:
-            - name: Debug
-              run: 'pwd; ls -al'
             - name: 'Checkout'
               uses: 'actions/checkout@v2'
               with:
                   path: 'php-rdkafka-doc'
+                  persist-credentials: false
             - name: 'Build'
               uses: './php-rdkafka-doc/.github/actions/build'
             - name: 'Checkout gh-pages'
