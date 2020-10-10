@@ -20,6 +20,6 @@ jobs:
               uses: 'actions/checkout@v2'
               with:
                   ref: 'gh-pages'
-                  path: 'php-rdkafka-doc-gh-pages'
+                  path: 'gh-pages'
             - name: 'Push'
               run: './php-rdkafka-doc/.github/workflows/push.sh'
