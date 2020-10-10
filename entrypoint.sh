@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -x
+pwd
+ls -l
+
 #build the doc
 ./build.sh
 

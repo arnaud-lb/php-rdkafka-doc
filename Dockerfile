@@ -4,6 +4,6 @@ RUN apt-get install bash
 
 RUN pear install doc.php.net/PhD && pear install doc.php.net/PhD_PHP
 
-WORKDIR /php-rdkafka-doc
+COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
