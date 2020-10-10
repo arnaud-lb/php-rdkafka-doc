@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Consume a batch of messages from a partition</title>
+  <title>Consume messages through a provided callback</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -10,8 +10,8 @@
  <body class="docs"><div class="navbar navbar-fixed-top">
   <div class="navbar-inner clearfix">
     <ul class="nav" style="width: 100%">
-      <li style="float: left;"><a href="rdkafka-consumertopic.consume.html">« RdKafka\ConsumerTopic::consume</a></li>
-      <li style="float: right;"><a href="rdkafka-consumertopic.consumecallbaack.html">RdKafka\ConsumerTopic::consumeCallback »</a></li>
+      <li style="float: left;"><a href="rdkafka-consumertopic.consumebatch.html">« RdKafka\ConsumerTopic::consumeBatch</a></li>
+      <li style="float: right;"><a href="rdkafka-consumertopic.consumequeuestart.html">RdKafka\ConsumerTopic::consumeQueueStart »</a></li>
     </ul>
   </div>
 </div>
@@ -19,28 +19,29 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.rdkafka-consumertopic.html">RdKafka\ConsumerTopic</a></li>
-    <li>Consume a batch of messages from a partition</li>
+    <li>Consume messages through a provided callback</li>
   </ul>
 </div>
 <div id="layout">
-  <div id="layout-content"><div id="rdkafka-consumertopic.consumebatch" class="refentry">
+  <div id="layout-content"><div id="rdkafka-consumertopic.consumecallbaack" class="refentry">
     <div class="refnamediv">
-        <h1 class="refname">RdKafka\ConsumerTopic::consumeBatch</h1>
-        <p class="verinfo">(PECL rdkafka &gt;= 4.0.0)</p><p class="refpurpose"><span class="refname">RdKafka\ConsumerTopic::consumeBatch</span> &mdash; <span class="dc-title">Consume a batch of messages from a partition</span></p>
+        <h1 class="refname">RdKafka\ConsumerTopic::consumeCallback</h1>
+        <p class="verinfo">(PECL rdkafka &gt;= 4.0.1)</p><p class="refpurpose"><span class="refname">RdKafka\ConsumerTopic::consumeCallback</span> &mdash; <span class="dc-title">Consume messages through a provided callback</span></p>
 
     </div>
 
-    <div class="refsect1 description" id="refsect1-rdkafka-consumertopic.consumebatch-description">
+    <div class="refsect1 description" id="refsect1-rdkafka-consumertopic.consumecallbaack-description">
         <h3 class="title">Description</h3>
         <div class="methodsynopsis dc-description">
-            <span class="modifier">public</span>  <span class="methodname"><strong>RdKafka\ConsumerTopic::consumeBatch</strong></span>
+            <span class="modifier">public</span>  <span class="methodname"><strong>RdKafka\ConsumerTopic::consumeCallback</strong></span>
              ( <span class="methodparam"><span class="type">integer</span> <code class="parameter">$partition</code></span>
             , <span class="methodparam"><span class="type">integer</span> <code class="parameter">$timeout_ms</code></span>
-            , <span class="methodparam"><span class="type">integer</span> <code class="parameter">$batch_size</code></span>
-         ) : <span class="type">array</span></div>
+            , <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$callback</code></span>
+         ) : <span class="type"><span class="type void">void</span></span></div>
 
         <p class="para rdfs-comment">
-            Consume a batch of messages from <code class="parameter">partition</code>.
+            Consume messages through a callback from a given <code class="parameter">partition</code>.
+            Of all the low level consuming methods, this is the fastest.
         </p>
         <p class="para">
             Consumer must have been previously started with <span class="function"><a href="rdkafka-consumertopic.consumestart.html" class="function">RdKafka\ConsumerTopic::consumeStart()</a></span>.
@@ -48,7 +49,7 @@
     </div>
 
 
-    <div class="refsect1 parameters" id="refsect1-rdkafka-consumertopic.consumebatch-parameters">
+    <div class="refsect1 parameters" id="refsect1-rdkafka-consumertopic.consumecallbaack-parameters">
         <h3 class="title">Parameters</h3>
         <dl>
 
@@ -71,19 +72,26 @@
                 <dd>
 
                     <p class="para">
-                        The maximum amount of time to wait for a batch to be received.
+                        The maximum amount of time to wait for a message to be received.
                     </p>
                 </dd>
 
             
             
                 <dt>
-<code class="parameter">batch_size</code></dt>
+<code class="parameter">callback</code></dt>
 
                 <dd>
 
                     <p class="para">
-                        The batch size of messages to be returned.
+                        A <span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> with the following signature:
+                        <div class="example-contents">
+                            <div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/**<br />&nbsp;*&nbsp;@param&nbsp;object&nbsp;$message<br />&nbsp;*/<br /></span><span style="color: #007700">function&nbsp;(</span><span style="color: #0000BB">$message</span><span style="color: #007700">);</span>
+</span>
+</code></div>
+                        </div>
+
                     </p>
                 </dd>
 
@@ -93,15 +101,7 @@
     </div>
 
 
-    <div class="refsect1 returnvalues" id="refsect1-rdkafka-consumertopic.consumebatch-returnvalues">
-        <h3 class="title">Return Values</h3>
-        <p class="para">
-            Returns an array of <a href="class.rdkafka-message.html" class="classname">RdKafka\Message</a> or <strong><code>NULL</code></strong> on timeout.
-        </p>
-    </div>
-
-
-    <div class="refsect1 errors" id="refsect1-rdkafka-consumertopic.consumebatch-errors">
+    <div class="refsect1 errors" id="refsect1-rdkafka-consumertopic.consumecallbaack-errors">
         <h3 class="title">Errors/Exceptions</h3>
         <ul class="simplelist">
             <li class="member">Throws <a href="class.rdkafka-exception.html" class="classname">RdKafka\Exception</a> on errors.</li>
