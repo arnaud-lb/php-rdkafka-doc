@@ -23,3 +23,5 @@ jobs:
                   path: 'gh-pages'
             - name: 'Push'
               run: './php-rdkafka-doc/.github/workflows/push.sh'
+              env:
+                  GHA_DEPLOY_KEY: ${{ secrets.GHA_DEPLOY_KEY }}
