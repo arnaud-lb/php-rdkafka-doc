@@ -8,6 +8,7 @@
 <![CDATA[
 <?php
 
+        test
 $conf = new RdKafka\Conf();
 
 // Set a rebalance callback to log partition assignments (optional)
