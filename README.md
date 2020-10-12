@@ -14,7 +14,7 @@ The documentation can be read at https://arnaud-lb.github.io/php-rdkafka/phpdoc/
 
 Note: to rebuild the documentation and see changes you made, run:
 ```
-docker-compose exec apache ./build.sh
+docker-compose up build
 ```
 This will be done on startup as well
 

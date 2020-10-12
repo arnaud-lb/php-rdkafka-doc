@@ -1,9 +1,16 @@
 version: '3.1'
 services:
-  apache:
+  build:
     build:
       context: .
     volumes:
       - ./:/php-rdkafka-doc
+  file-server:
+    image: halverneus/static-file-server:v1.8.1
+    volumes:
+      - ./:/php-rdkafka-doc
     ports:
-      - "8081:80"
+      - "8081:8081"
+    environment:
+      PORT: "8081"
+      FOLDER: "/php-rdkafka-doc/output/php-chunked-xhtml"
