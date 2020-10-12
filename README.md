@@ -16,7 +16,7 @@ Note: to rebuild the documentation and see changes you made, run:
 ```
 docker-compose up build
 ```
-This will be done on startup as well
+This will be done on startup as well.
 
 This is a stripped-down version of the PHP documentation that can be found here:
 https://svn.php.net/viewvc/phpdoc/. The goal would be to merge it there
