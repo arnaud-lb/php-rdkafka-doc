@@ -1,0 +1,26 @@
+name: 'Build'
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    build:
+        name: 'Build'
+        runs-on: 'ubuntu-20.04'
+        steps:
+            - name: 'Checkout'
+              uses: 'actions/checkout@v2'
+              with:
+                  path: 'php-rdkafka-doc'
+                  persist-credentials: false
+            - name: 'Build'
+              uses: './php-rdkafka-doc/.github/actions/build'
+            - name: 'Checkout gh-pages'
+              uses: 'actions/checkout@v2'
+              with:
+                  ref: 'gh-pages'
+                  path: 'gh-pages'
+            - name: 'Push'
+              run: './php-rdkafka-doc/.github/workflows/push.sh'
