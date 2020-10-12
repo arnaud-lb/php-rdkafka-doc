@@ -11,7 +11,7 @@
   &reftitle.description;
   <methodsynopsis>
    <modifier>public</modifier> <type>RdKafka\Message</type><methodname>RdKafka\Queue::consume</methodname>
-   <methodparam><type>string</type><parameter>timeout_ms</parameter></methodparam>
+   <methodparam><type>int</type><parameter>timeout_ms</parameter></methodparam>
   </methodsynopsis>
   <para>
    Consume a single message. See <function>RdKafka\ConsumerTopic::consume</function>.
