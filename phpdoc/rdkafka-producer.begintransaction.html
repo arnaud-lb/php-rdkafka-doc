@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Begin a transaction</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="rdkafka-producer.aborttransaction.html">« RdKafka\Producer::abortTransaction</a></li>
+      <li style="float: right;"><a href="rdkafka-producer.committransaction.html">RdKafka\Producer::commitTransaction »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="class.rdkafka-producer.html">RdKafka\Producer</a></li>
+    <li>Begin a transaction</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="rdkafka-producer.begintransaction" class="refentry">
+    <div class="refnamediv">
+        <h1 class="refname">RdKafka\Producer::beginTransaction</h1>
+        <p class="verinfo">(PECL rdkafka &gt;= 4.1.0, librdkafka &gt;= 1.4.0)</p><p class="refpurpose"><span class="refname">RdKafka\Producer::beginTransaction</span> &mdash; <span class="dc-title">Begin a transaction</span></p>
+
+    </div>
+
+    <div class="refsect1 description" id="refsect1-rdkafka-producer.begintransaction-description">
+        <h3 class="title">Description</h3>
+        <div class="methodsynopsis dc-description">
+            <span class="modifier">public</span> <span class="methodname"><strong>RdKafka\Producer::beginTransaction</strong></span>
+             ( <span class="methodparam">void</span>
+         ) : <span class="type"><span class="type void">void</span></span></div>
+
+        <p class="para rdfs-comment">
+        <span class="methodname"><a href="rdkafka-producer.inittransactions.html" class="methodname">RdKafka\Producer::initTransactions()</a></span> must have been called successfully (once)
+        before this function is called.
+
+        Any messages produced, offsets sent,
+        etc, after the successful return of this function will be part of
+        the transaction and committed or aborted atomatically.
+
+        Finish the transaction by calling <span class="methodname"><a href="rdkafka-producer.committransaction.html" class="methodname">RdKafka\Producer::commitTransaction()</a></span> or
+        abort the transaction by calling <span class="methodname"><a href="rdkafka-producer.aborttransaction.html" class="methodname">RdKafka\Producer::abortTransaction()</a></span>.
+        </p>
+    </div>
+
+
+    <div class="refsect1 returnvalues" id="refsect1-rdkafka-producer.begintransaction-returnvalues">
+        <h3 class="title">Return Values</h3>
+        <p class="para">
+            In case of success returns <em>NULL</em>, in case of error a <a href="class.rdkafka-kafkaerror.html" class="classname">RdKafka\KafkaErrorException</a> will be thrown.
+        </p>
+    </div>
+
+
+</div></div></div></body></html>

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Transactional producer</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="rdkafka.examples-producer.html">« Producer</a></li>
+      <li style="float: right;"><a href="ref.rdkafka.html">Rdkafka Functions »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="rdkafka.examples.html">Examples</a></li>
+    <li>Transactional producer</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="rdkafka.examples-transactional-producer" class="section">
+  <h2 class="title">Transactional producer</h2>
+  <p class="para">
+   This example shows how to use the <a href="" class="link">producer</a> with transactions.
+      <blockquote class="note"><p><strong class="note">Note</strong>: 
+          <p class="para">
+              Since version 4.0, proper shutdown (using flush) is responsibility of the application. Please check the
+              example below. Without proper shutdown, messages can get lost.
+          </p>
+      </p></blockquote>
+   <div class="example" id="example-7">
+    <p><strong>Example #1 Transactional producer example</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$conf&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">RdKafka</span><span style="color: #007700">\</span><span style="color: #0000BB">Conf</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$conf</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #DD0000">'metadata.broker.list'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'localhost:9092'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$conf</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #DD0000">'transactional.id'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'some-id'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$producer&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">RdKafka</span><span style="color: #007700">\</span><span style="color: #0000BB">Producer</span><span style="color: #007700">(</span><span style="color: #0000BB">$conf</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$topic&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$producer</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">newTopic</span><span style="color: #007700">(</span><span style="color: #DD0000">"test"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$producer</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">initTransactions</span><span style="color: #007700">(</span><span style="color: #0000BB">10000</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$producer</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">beginTransaction</span><span style="color: #007700">();<br /><br />for&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$topic</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">produce</span><span style="color: #007700">(</span><span style="color: #0000BB">RD_KAFKA_PARTITION_UA</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Message&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #DD0000">"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$producer</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">poll</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//Any&nbsp;outstanding&nbsp;messages&nbsp;will&nbsp;be&nbsp;flushed&nbsp;(delivered)&nbsp;before&nbsp;actually&nbsp;committing&nbsp;the&nbsp;transaction.<br /></span><span style="color: #0000BB">$error&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$producer</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">commitTransaction</span><span style="color: #007700">(</span><span style="color: #0000BB">10000</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">RD_KAFKA_RESP_ERR_NO_ERROR&nbsp;</span><span style="color: #007700">!==&nbsp;</span><span style="color: #0000BB">$error</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//check&nbsp;what&nbsp;kind&nbsp;of&nbsp;error&nbsp;it&nbsp;was&nbsp;e.g.&nbsp;$error-&gt;isFatal(),&nbsp;etc.&nbsp;and&nbsp;act&nbsp;accordingly&nbsp;(retry,&nbsp;abort,&nbsp;etc.)<br /></span><span style="color: #007700">}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+     <p class="para">
+         The transactional producer operates on top of the idempotent producer,
+         and provides full exactly-once semantics (EOS) for Apache Kafka when used
+         with the transaction aware consumer (isolation.level=read_committed, which is the default).
+     </p>
+     <p class="para">
+         A producer instance is configured for transactions by setting the
+         transactional.id to an identifier unique for the application. This
+         id will be used to fence stale transactions from previous instances of
+         the application, typically following an outage or crash.
+     </p>
+     <p class="para">
+         After creating the producer instance
+         the transactional state must be initialized by calling
+         <span class="methodname"><a href="rdkafka-producer.inittransactions.html" class="methodname">RdKafka\Producer::initTransactions()</a></span>. This is a blocking call that will
+         acquire a runtime producer id from the transaction coordinator broker
+         as well as abort any stale transactions and fence any still running producer
+         instances with the same transactional.id.
+     </p>
+     <p class="para">
+         Once transactions are initialized the application may begin a new
+         transaction by calling <span class="methodname"><a href="rdkafka-producer.begintransaction.html" class="methodname">RdKafka\Producer::beginTransaction()</a></span>.
+         A producer instance may only have one single on-going transaction.
+     </p>
+     <p class="para">
+         Any messages produced after the transaction has been started will
+         belong to the ongoing transaction and will be committed or aborted
+         atomically.
+         It is not permitted to produce messages outside a transaction
+         boundary, e.g., before <span class="methodname"><a href="rdkafka-producer.begintransaction.html" class="methodname">RdKafka\Producer::beginTransaction()</a></span> or after
+         <span class="methodname"><a href="rdkafka-producer.committransaction.html" class="methodname">RdKafka\Producer::commitTransaction()</a></span>, <span class="methodname"><a href="rdkafka-producer.aborttransaction.html" class="methodname">RdKafka\Producer::abortTransaction()</a></span>, or after
+         the current transaction has failed.
+     </p>
+     <p class="para">
+         To commit the produced messages, and any consumed offsets, to the
+         current transaction, call <span class="methodname"><a href="rdkafka-producer.committransaction.html" class="methodname">RdKafka\Producer::commitTransaction()</a></span>.
+         This call will block until the transaction has been fully committed or
+         failed (typically due to fencing by a newer producer instance).
+     </p>
+     <p class="para">
+         Alternatively, if processing fails, or an abortable transaction error is
+         raised, the transaction needs to be aborted by calling
+         <span class="methodname"><a href="rdkafka-producer.aborttransaction.html" class="methodname">RdKafka\Producer::abortTransaction()</a></span> which marks any produced messages and
+         offset commits as aborted.
+     </p>
+     <p class="para">
+         After the current transaction has been committed or aborted a new
+         transaction may be started by calling <span class="methodname"><a href="rdkafka-producer.begintransaction.html" class="methodname">RdKafka\Producer::beginTransaction()</a></span> again.
+     </p>
+     <blockquote class="note"><p><strong class="note">Note</strong>: 
+         <p class="para">
+             If you have a local docker setup with just one broker, be sure to use these envs in your docker-compose.yml for your broker:
+             <div class="example-contents"><div class="ymlcode"><pre class="ymlcode">KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1</pre>
+</div></div>
+
+         </p>
+     </p></blockquote>
+ </div></div></div></body></html>
