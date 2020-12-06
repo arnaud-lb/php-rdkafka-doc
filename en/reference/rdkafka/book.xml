@@ -23,6 +23,7 @@
  &reference.rdkafka.rdkafka;
  &reference.rdkafka.rdkafka.consumer;
  &reference.rdkafka.rdkafka.producer;
+ &reference.rdkafka.rdkafka.kafkaerrorexception;
  &reference.rdkafka.rdkafka.topic;
  &reference.rdkafka.rdkafka.consumertopic;
  &reference.rdkafka.rdkafka.producertopic;

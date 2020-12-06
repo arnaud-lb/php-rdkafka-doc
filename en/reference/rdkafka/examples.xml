@@ -6,6 +6,8 @@
  &reference.rdkafka.examples.high-level-consumer;
  &reference.rdkafka.examples.low-level-consumer;
  &reference.rdkafka.examples.producer;
+ &reference.rdkafka.examples.transactional-producer;
+
 </chapter>
 
 <!-- Keep this comment at the end of the file

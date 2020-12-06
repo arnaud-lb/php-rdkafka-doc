@@ -1,0 +1,103 @@
+ <section xml:id="rdkafka.examples-transactional-producer">
+  <title>Transactional producer</title>
+  <para>
+   This example shows how to use the <link linkend="class.rdkafka-kafkaproducer">producer</link> with transactions.
+      <note>
+          <para>
+              Since version 4.0, proper shutdown (using flush) is responsibility of the application. Please check the
+              example below. Without proper shutdown, messages can get lost.
+          </para>
+      </note>
+   <example>
+    <title>Transactional producer example</title>
+    <programlisting role="php">
+<![CDATA[
+<?php
+
+$conf = new RdKafka\Conf();
+$conf->set('metadata.broker.list', 'localhost:9092');
+$conf->set('transactional.id', 'some-id');
+
+$producer = new RdKafka\Producer($conf);
+
+$topic = $producer->newTopic("test");
+
+$producer->initTransactions(10000);
+$producer->beginTransaction();
+
+for ($i = 0; $i < 10; $i++) {
+    $topic->produce(RD_KAFKA_PARTITION_UA, 0, "Message $i");
+    $producer->poll(0);
+}
+
+//Any outstanding messages will be flushed (delivered) before actually committing the transaction.
+$error = $producer->commitTransaction(10000);
+
+if (RD_KAFKA_RESP_ERR_NO_ERROR !== $error) {
+    //check what kind of error it was e.g. $error->isFatal(), etc. and act accordingly (retry, abort, etc.)
+}
+
+?>
+]]>
+    </programlisting>
+   </example>
+  </para>
+     <para>
+         The transactional producer operates on top of the idempotent producer,
+         and provides full exactly-once semantics (EOS) for Apache Kafka when used
+         with the transaction aware consumer (isolation.level=read_committed, which is the default).
+     </para>
+     <para>
+         A producer instance is configured for transactions by setting the
+         transactional.id to an identifier unique for the application. This
+         id will be used to fence stale transactions from previous instances of
+         the application, typically following an outage or crash.
+     </para>
+     <para>
+         After creating the producer instance
+         the transactional state must be initialized by calling
+         <methodname>RdKafka\Producer::initTransactions</methodname>. This is a blocking call that will
+         acquire a runtime producer id from the transaction coordinator broker
+         as well as abort any stale transactions and fence any still running producer
+         instances with the same transactional.id.
+     </para>
+     <para>
+         Once transactions are initialized the application may begin a new
+         transaction by calling <methodname>RdKafka\Producer::beginTransaction</methodname>.
+         A producer instance may only have one single on-going transaction.
+     </para>
+     <para>
+         Any messages produced after the transaction has been started will
+         belong to the ongoing transaction and will be committed or aborted
+         atomically.
+         It is not permitted to produce messages outside a transaction
+         boundary, e.g., before <methodname>RdKafka\Producer::beginTransaction</methodname> or after
+         <methodname>RdKafka\Producer::commitTransaction</methodname>, <methodname>RdKafka\Producer::abortTransaction</methodname>, or after
+         the current transaction has failed.
+     </para>
+     <para>
+         To commit the produced messages, and any consumed offsets, to the
+         current transaction, call <methodname>RdKafka\Producer::commitTransaction</methodname>.
+         This call will block until the transaction has been fully committed or
+         failed (typically due to fencing by a newer producer instance).
+     </para>
+     <para>
+         Alternatively, if processing fails, or an abortable transaction error is
+         raised, the transaction needs to be aborted by calling
+         <methodname>RdKafka\Producer::abortTransaction</methodname> which marks any produced messages and
+         offset commits as aborted.
+     </para>
+     <para>
+         After the current transaction has been committed or aborted a new
+         transaction may be started by calling <methodname>RdKafka\Producer::beginTransaction</methodname> again.
+     </para>
+     <note>
+         <para>
+             If you have a local docker setup with just one broker, be sure to use these envs in your docker-compose.yml for your broker:
+             <programlisting role="yml">
+KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+             </programlisting>
+         </para>
+     </note>
+ </section>

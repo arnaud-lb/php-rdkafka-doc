@@ -43,6 +43,9 @@
 
  <function name='rdkafka\producer' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\producer::__construct' from='PECL rdkafka &gt;= 0.9.1'/>
+ <function name='rdkafka\producer::inittransactions' from='PECL rdkafka &gt;= 4.1.0, librdkafka &gt;= 1.4.0'/>
+ <function name='rdkafka\producer::begintransaction' from='PECL rdkafka &gt;= 4.1.0, librdkafka &gt;= 1.4.0'/>
+ <function name='rdkafka\producer::committransaction' from='PECL rdkafka &gt;= 4.1.0, librdkafka &gt;= 1.4.0'/>
  <function name='rdkafka\producer::addbrokers' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\producer::metadata' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\producer::setloglevel' from='PECL rdkafka &gt;= 0.9.1'/>
@@ -53,6 +56,13 @@
  <function name='rdkafka\producer::purge' from='PECL rdkafka &gt;= 4.0.0, librdkafka &gt;= 1.0.0'/>
  <function name='rdkafka\producer::setlogger' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\producer::__destruct' from='PECL rdkafka &gt;= 0.9.1'/>
+
+ <function name='rdkafka\kafkaerrorexception::getcode' from='PECL rdkafka &gt;= 4.1.0, librdkafka &gt;= 1.4.0'/>
+ <function name='rdkafka\kafkaerrorexception::getmessage' from='PECL rdkafka &gt;= 4.1.0, librdkafka &gt;= 1.4.0'/>
+ <function name='rdkafka\kafkaerrorexception::getstring' from='PECL rdkafka &gt;= 4.1.0, librdkafka &gt;= 1.4.0'/>
+ <function name='rdkafka\kafkaerrorexception::isfatal' from='PECL rdkafka &gt;= 4.1.0, librdkafka &gt;= 1.4.0'/>
+ <function name='rdkafka\kafkaerrorexception::isretriable' from='PECL rdkafka &gt;= 4.1.0, librdkafka &gt;= 1.4.0'/>
+ <function name='rdkafka\kafkaerrorexception::transactionrequiresabort' from='PECL rdkafka &gt;= 4.1.0, librdkafka &gt;= 1.4.0'/>
 
  <function name='rdkafka\exception' from='PECL rdkafka &gt;= 0.9.1'/>
  <function name='rdkafka\exception::__clone' from='PECL rdkafka &gt;= 0.9.1'/>
