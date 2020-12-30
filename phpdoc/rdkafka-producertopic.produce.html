@@ -36,15 +36,16 @@
    <span class="modifier">public</span> <span class="methodname"><strong>RdKafka\ProducerTopic::produce</strong></span>
     ( <span class="methodparam"><span class="type">integer</span> <code class="parameter">$partition</code></span>
    , <span class="methodparam"><span class="type">integer</span> <code class="parameter">$msgflags</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$payload</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$payload</code> <span class="initializer"> = <strong><code>NULL</code></strong></span></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code> <span class="initializer"> = <strong><code>NULL</code></strong></span></span>
-  ] ) : <span class="type"><span class="type void">void</span></span></div>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$opaque</code> <span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+  ]]] ) : <span class="type"><span class="type void">void</span></span></div>
 
   <p class="para rdfs-comment">
    Produce and send a single message to broker.
   </p>
   <p class="para">
-   This is a async and non-blocking.
+   This is async and non-blocking.
   </p>
   <blockquote class="note"><p><strong class="note">Note</strong>: 
    <p class="para">
@@ -62,7 +63,7 @@
 
    
     <dt>
-<code class="parameter">partition</code> (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)</dt>
+<code class="parameter">partition</code></dt>
 
     <dd>
 
@@ -74,7 +75,7 @@
    
    
     <dt>
-<code class="parameter">msgflags</code> (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)</dt>
+<code class="parameter">msgflags</code></dt>
 
     <dd>
 
@@ -86,7 +87,7 @@
    
    
     <dt>
-<code class="parameter">payload</code> (<span class="type"><a href="language.types.string.html" class="type string">string</a></span>)</dt>
+<code class="parameter">payload</code></dt>
 
     <dd>
 
@@ -98,12 +99,24 @@
    
    
     <dt>
-<code class="parameter">key</code> (<span class="type"><a href="language.types.string.html" class="type string">string</a></span>)</dt>
+<code class="parameter">key</code></dt>
 
     <dd>
 
      <p class="para">
       Optional message key, if non-<strong><code>NULL</code></strong> it will be passed to the topic partitioner as well as be sent with the message to the broker and passed on to the consumer.
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">opaque</code></dt>
+
+    <dd>
+
+     <p class="para">
+      An optional application-provided per-message opaque string that will be provided in the message&#039;s delivary callback (see <span class="function"><a href="rdkafka-conf.setdrmsgcb.html" class="function">RdKafka\Conf::setDrMsgCb()</a></span>). (Since PECL rdkafka 5.0.0 with librdkafka &gt;= 1.0.0.)
      </p>
     </dd>
 
@@ -129,9 +142,38 @@
  </div>
 
 
+ <div class="refsect1 changelog" id="refsect1-rdkafka-producertopic.produce-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Description</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.0.0</td>
+       <td>
+        Added optional <code class="parameter">opaque</code> parameter.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
  <div class="refsect1 examples" id="refsect1-rdkafka-producertopic.produce-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-20">
+  <div class="example" id="example-21">
    <p><strong>Example #1 <span class="function"><strong>RdKafka\ProducerTopic::produce()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

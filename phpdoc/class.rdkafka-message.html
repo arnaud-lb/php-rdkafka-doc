@@ -59,44 +59,57 @@
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* Properties */</div>
     <div class="fieldsynopsis">
      <span class="modifier">public</span>
+     <span class="type"><span class="type int|null">int|null</span></span>
       <var class="varname"><a href="class.rdkafka-message.html#rdkafka-message.props.err">$<var class="varname">err</var></a></var>
     ;</div>
 
     <div class="fieldsynopsis">
      <span class="modifier">public</span>
+     <span class="type"><span class="type int|null">int|null</span></span>
       <var class="varname"><a href="class.rdkafka-message.html#rdkafka-message.props.len">$<var class="varname">len</var></a></var>
     ;</div>
 
     <div class="fieldsynopsis">
      <span class="modifier">public</span>
+     <span class="type"><span class="type string|null">string|null</span></span>
       <var class="varname"><a href="class.rdkafka-message.html#rdkafka-message.props.topic-name">$<var class="varname">topic_name</var></a></var>
     ;</div>
 
     <div class="fieldsynopsis">
      <span class="modifier">public</span>
+     <span class="type"><span class="type int|null">int|null</span></span>
       <var class="varname"><a href="class.rdkafka-message.html#rdkafka-message.props.timestamp">$<var class="varname">timestamp</var></a></var>
     ;</div>
 
     <div class="fieldsynopsis">
      <span class="modifier">public</span>
+     <span class="type"><span class="type int|null">int|null</span></span>
       <var class="varname"><a href="class.rdkafka-message.html#rdkafka-message.props.partition">$<var class="varname">partition</var></a></var>
     ;</div>
 
     <div class="fieldsynopsis">
      <span class="modifier">public</span>
+     <span class="type"><span class="type string|null">string|null</span></span>
       <var class="varname"><a href="class.rdkafka-message.html#rdkafka-message.props.payload">$<var class="varname">payload</var></a></var>
     ;</div>
 
     <div class="fieldsynopsis">
      <span class="modifier">public</span>
+     <span class="type"><span class="type string|null">string|null</span></span>
       <var class="varname"><a href="class.rdkafka-message.html#rdkafka-message.props.key">$<var class="varname">key</var></a></var>
     ;</div>
 
     <div class="fieldsynopsis">
      <span class="modifier">public</span>
+     <span class="type"><span class="type int|null">int|null</span></span>
       <var class="varname"><a href="class.rdkafka-message.html#rdkafka-message.props.offset">$<var class="varname">offset</var></a></var>
     ;</div>
 
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type"><span class="type string|null">string|null</span></span>
+      <var class="varname"><a href="class.rdkafka-message.html#rdkafka-message.props.opaque">$<var class="varname">opaque</var></a></var>
+    ;</div>
 
 
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* Methods */</div>
@@ -125,7 +138,7 @@
 
      <dd>
 
-      <p class="para">Error code (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)</p>
+      <p class="para">Error code</p>
      </dd>
 
     
@@ -134,7 +147,7 @@
 
      <dd>
 
-      <p class="para">Length (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)</p>
+      <p class="para">Length</p>
      </dd>
 
     
@@ -143,7 +156,7 @@
 
      <dd>
 
-      <p class="para">Topic name (<span class="type"><a href="language.types.string.html" class="type string">string</a></span>)</p>
+      <p class="para">Topic name</p>
      </dd>
 
     
@@ -152,7 +165,7 @@
 
      <dd>
 
-      <p class="para">Timestamp (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)</p>
+      <p class="para">Timestamp</p>
      </dd>
 
     
@@ -161,7 +174,7 @@
 
      <dd>
 
-      <p class="para">Partition (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)</p>
+      <p class="para">Partition</p>
      </dd>
 
     
@@ -170,7 +183,7 @@
 
      <dd>
 
-      <p class="para">Payload (<span class="type"><a href="language.types.string.html" class="type string">string</a></span>)</p>
+      <p class="para">Payload</p>
      </dd>
 
     
@@ -179,7 +192,7 @@
 
      <dd>
 
-      <p class="para">Key (<span class="type"><a href="language.types.string.html" class="type string">string</a></span>)</p>
+      <p class="para">Key</p>
      </dd>
 
     
@@ -188,7 +201,16 @@
 
      <dd>
 
-      <p class="para">Offset (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)</p>
+      <p class="para">Offset</p>
+     </dd>
+
+    
+    
+     <dt id="rdkafka-message.props.opaque"><var class="varname"><var class="varname">offset</var></var></dt>
+
+     <dd>
+
+      <p class="para">In a delivery callback context, this is the value of the <code class="parameter">opaque</code> from the <span class="function"><a href="rdkafka-producertopic.produce.html" class="function">RdKafka\ProducerTopic::produce()</a></span> or <span class="function"><a href="rdkafka-producertopic.producev.html" class="function">RdKafka\ProducerTopic::producev()</a></span> call. Since php-rdkafka 5.0.0 with librdkafka &gt;= 1.0.0.</p>
      </dd>
 
     

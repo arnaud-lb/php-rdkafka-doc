@@ -64,18 +64,20 @@
    <span class="modifier">public</span> <span class="methodname"><a href="rdkafka-producertopic.produce.html" class="methodname">produce</a></span>
     ( <span class="methodparam"><span class="type">integer</span> <code class="parameter">$partition</code></span>
    , <span class="methodparam"><span class="type">integer</span> <code class="parameter">$msgflags</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$payload</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$payload</code> <span class="initializer"> = <strong><code>NULL</code></strong></span></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code> <span class="initializer"> = <strong><code>NULL</code></strong></span></span>
-  ] ) : <span class="type"><span class="type void">void</span></span></div>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$opaque</code> <span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+  ]]] ) : <span class="type"><span class="type void">void</span></span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><a href="rdkafka-producertopic.producev.html" class="methodname">producev</a></span>
     ( <span class="methodparam"><span class="type">integer</span> <code class="parameter">$partition</code></span>
    , <span class="methodparam"><span class="type">integer</span> <code class="parameter">$msgflags</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$payload</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code> <span class="initializer"> = <strong><code>NULL</code></strong></span></span>
-   ], <span class="methodparam"><span class="type">array</span> <code class="parameter">$headers</code></span>
-   , <span class="methodparam"><span class="type">integer</span> <code class="parameter">$timestamp_ms</code></span>
-   ) : <span class="type"><span class="type void">void</span></span></div>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$headers</code> <span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+   [, <span class="methodparam"><span class="type">integer</span> <code class="parameter">$timestamp_ms</code> <span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$opaque</code> <span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+  ]]]] ) : <span class="type"><span class="type void">void</span></span></div>
 
     
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* Inherited methods */</div>
