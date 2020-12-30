@@ -144,7 +144,7 @@
     <varlistentry xml:id="rdkafka-message.props.opaque">
      <term><varname>opaque</varname></term>
      <listitem>
-      <para>In a delivery callback context, this is the value of the <parameter>opaque</parameter> from the <function>RdKafka\ProducerTopic::produce</function> or <function>RdKafka\ProducerTopic::producev</function> call. Since php-rdkafka 5.0.0 with librdkafka &gt;= 1.0.0.</para>
+      <para>In a delivery callback context, this is the value of the <parameter>opaque</parameter> from the <function>RdKafka\ProducerTopic::produce</function> or <function>RdKafka\ProducerTopic::producev</function> call. (Since PECL rdkafka 5.0.0 with librdkafka &gt;= 1.0.0.)</para>
      </listitem>
     </varlistentry>
    </variablelist>
