@@ -15,15 +15,15 @@
    <methodparam><type>integer</type><parameter>msgflags</parameter></methodparam>
    <methodparam><type>string</type><parameter>payload</parameter></methodparam>
    <methodparam choice="opt"><type>string</type><parameter>key</parameter> <initializer>&null;</initializer></methodparam>
-   <methodparam><type>array</type><parameter>headers</parameter></methodparam>
-   <methodparam><type>integer</type><parameter>timestamp_ms</parameter></methodparam>
+   <methodparam choice="opt"><type>array</type><parameter>headers</parameter> <initializer>&null;</initializer></methodparam>
+   <methodparam choice="opt"><type>integer</type><parameter>timestamp_ms</parameter> <initializer>&null;</initializer></methodparam>
+   <methodparam choice="opt"><type>string</type><parameter>opaque</parameter> <initializer>&null;</initializer></methodparam>
   </methodsynopsis>
   <para>
-   Produce and send a single message to broker with headers.
-   Produce and send a single message to broker.
+   Produce and send a single message to broker with headers, timestamp.
   </para>
   <para>
-   This is a async and non-blocking.
+   This is async and non-blocking.
   </para>
   <note>
    <para>
@@ -38,7 +38,7 @@
   &reftitle.parameters;
   <variablelist>
    <varlistentry>
-    <term><parameter>partition</parameter> (<type>integer</type>)</term>
+    <term><parameter>partition</parameter></term>
     <listitem>
      <para>
       Can be either <constant>RD_KAFKA_PARTITION_UA</constant> (unassigned) for automatic partitioning using the topic's partitioner function (see <function>RdKafka\TopicConf::setPartitioner</function>, or a fixed partition (0..N).
@@ -46,7 +46,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><parameter>msgflags</parameter> (<type>integer</type>)</term>
+    <term><parameter>msgflags</parameter></term>
     <listitem>
      <para>
       Must be either 0 or <constant>RD_KAFKA_MSG_F_BLOCK</constant>
@@ -54,7 +54,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><parameter>payload</parameter> (<type>string</type>)</term>
+    <term><parameter>payload</parameter></term>
     <listitem>
      <para>
       Payload string
@@ -62,7 +62,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><parameter>key</parameter> (<type>string</type>)</term>
+    <term><parameter>key</parameter></term>
     <listitem>
      <para>
       Optional message key, if non-&null; it will be passed to the topic partitioner as well as be sent with the message to the broker and passed on to the consumer.
@@ -70,7 +70,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><parameter>headers</parameter> (<type>array</type>)</term>
+    <term><parameter>headers</parameter></term>
     <listitem>
      <para>
       Accepts only associative array or null
@@ -78,10 +78,18 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><parameter>timestamp_ms</parameter> (<type>integer</type>)</term>
+    <term><parameter>timestamp_ms</parameter></term>
     <listitem>
      <para>
       Timestamp that should be set for the message, if not set, the broker will set it
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><parameter>opaque</parameter></term>
+    <listitem>
+     <para>
+      An optional application-provided per-message opaque string that will be provided in the message's delivary callback (see <function>RdKafka\Conf::setDrMsgCb</function>). (Since PECL rdkafka 5.0.0 with librdkafka &gt;= 1.0.0.)
      </para>
     </listitem>
    </varlistentry>
@@ -95,12 +103,36 @@
   </para>
  </refsect1>
 
-  <refsect1 role="errors">
-    &reftitle.errors;
-    <simplelist>
-        &rdkafka.error.exception;
-    </simplelist>
-  </refsect1>
+ <refsect1 role="errors">
+  &reftitle.errors;
+  <simplelist>
+   &rdkafka.error.exception;
+  </simplelist>
+ </refsect1>
+
+ <refsect1 role="changelog">
+  &reftitle.changelog;
+  <para>
+   <informaltable>
+    <tgroup cols="2">
+     <thead>
+      <row>
+       <entry>&Version;</entry>
+       <entry>&Description;</entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry>5.0.0</entry>
+       <entry>
+        Added optional <parameter>opaque</parameter> parameter.
+       </entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </informaltable>
+  </para>
+ </refsect1>
 
  <refsect1 role="examples">
   &reftitle.examples;

@@ -37,37 +37,49 @@
     <classsynopsisinfo role="comment">&Properties;</classsynopsisinfo>
     <fieldsynopsis>
      <modifier>public</modifier>
+     <type>int|null</type>
      <varname linkend="rdkafka-message.props.err">err</varname>
     </fieldsynopsis>
     <fieldsynopsis>
      <modifier>public</modifier>
+     <type>int|null</type>
      <varname linkend="rdkafka-message.props.len">len</varname>
     </fieldsynopsis>
     <fieldsynopsis>
      <modifier>public</modifier>
+     <type>string|null</type>
      <varname linkend="rdkafka-message.props.topic-name">topic_name</varname>
     </fieldsynopsis>
     <fieldsynopsis>
      <modifier>public</modifier>
+     <type>int|null</type>
      <varname linkend="rdkafka-message.props.timestamp">timestamp</varname>
     </fieldsynopsis>
     <fieldsynopsis>
      <modifier>public</modifier>
+     <type>int|null</type>
      <varname linkend="rdkafka-message.props.partition">partition</varname>
     </fieldsynopsis>
     <fieldsynopsis>
      <modifier>public</modifier>
+     <type>string|null</type>
      <varname linkend="rdkafka-message.props.payload">payload</varname>
     </fieldsynopsis>
     <fieldsynopsis>
      <modifier>public</modifier>
+     <type>string|null</type>
      <varname linkend="rdkafka-message.props.key">key</varname>
     </fieldsynopsis>
     <fieldsynopsis>
      <modifier>public</modifier>
+     <type>int|null</type>
      <varname linkend="rdkafka-message.props.offset">offset</varname>
     </fieldsynopsis>
-
+    <fieldsynopsis>
+     <modifier>public</modifier>
+     <type>string|null</type>
+     <varname linkend="rdkafka-message.props.opaque">opaque</varname>
+    </fieldsynopsis>
 
     <classsynopsisinfo role="comment">&Methods;</classsynopsisinfo>
     <xi:include xpointer="xmlns(db=http://docbook.org/ns/docbook) xpointer(id('class.rdkafka-message')/db:refentry/db:refsect1[@role='description']/descendant::db:methodsynopsis[not(@role='procedural')])" />
@@ -84,49 +96,55 @@
     <varlistentry xml:id="rdkafka-message.props.err">
      <term><varname>err</varname></term>
      <listitem>
-      <para>Error code (<type>integer</type>)</para>
+      <para>Error code</para>
      </listitem>
     </varlistentry>
     <varlistentry xml:id="rdkafka-message.props.len">
      <term><varname>len</varname></term>
      <listitem>
-      <para>Length (<type>integer</type>)</para>
+      <para>Length</para>
      </listitem>
     </varlistentry>
     <varlistentry xml:id="rdkafka-message.props.topic-name">
      <term><varname>topic_name</varname></term>
      <listitem>
-      <para>Topic name (<type>string</type>)</para>
+      <para>Topic name</para>
      </listitem>
     </varlistentry>
     <varlistentry xml:id="rdkafka-message.props.timestamp">
      <term><varname>timestamp</varname></term>
      <listitem>
-      <para>Timestamp (<type>integer</type>)</para>
+      <para>Timestamp</para>
      </listitem>
     </varlistentry>
     <varlistentry xml:id="rdkafka-message.props.partition">
      <term><varname>partition</varname></term>
      <listitem>
-      <para>Partition (<type>integer</type>)</para>
+      <para>Partition</para>
      </listitem>
     </varlistentry>
     <varlistentry xml:id="rdkafka-message.props.payload">
      <term><varname>payload</varname></term>
      <listitem>
-      <para>Payload (<type>string</type>)</para>
+      <para>Payload</para>
      </listitem>
     </varlistentry>
     <varlistentry xml:id="rdkafka-message.props.key">
      <term><varname>key</varname></term>
      <listitem>
-      <para>Key (<type>string</type>)</para>
+      <para>Key</para>
      </listitem>
     </varlistentry>
     <varlistentry xml:id="rdkafka-message.props.offset">
      <term><varname>offset</varname></term>
      <listitem>
-      <para>Offset (<type>integer</type>)</para>
+      <para>Offset</para>
+     </listitem>
+    </varlistentry>
+    <varlistentry xml:id="rdkafka-message.props.opaque">
+     <term><varname>offset</varname></term>
+     <listitem>
+      <para>In a delivery callback context, this is the value of the <parameter>opaque</parameter> from the <function>RdKafka\ProducerTopic::produce</function> or <function>RdKafka\ProducerTopic::producev</function> call. Since php-rdkafka 5.0.0 with librdkafka &gt;= 1.0.0.</para>
      </listitem>
     </varlistentry>
    </variablelist>
