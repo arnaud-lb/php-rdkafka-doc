@@ -62,7 +62,7 @@ $kafkaConsumer = new RdKafka\KafkaConsumer($conf);
 $topicPartition = new TopicPartition('myTopic', 0);
 $timeoutMs = 10000000;
 
-$topicPartitionsWithOffsets = $consumer->getCommittedOffsets([$topicPartition], $timeoutMs));
+$topicPartitionsWithOffsets = $kafkaConsumer->getCommittedOffsets([$topicPartition], $timeoutMs));
 ?>
 ]]>
             </programlisting>
