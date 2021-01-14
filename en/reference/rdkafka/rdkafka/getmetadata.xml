@@ -12,7 +12,7 @@
   <methodsynopsis>
    <modifier>public</modifier> <classname>RdKafka\Metadata</classname> <methodname>RdKafka::getMetadata</methodname>
    <methodparam><type>bool</type><parameter>all_topics</parameter></methodparam>
-   <methodparam><classname>RdKafka\Topic</classname><parameter>only_topic</parameter><initializer>&null;</initializer></methodparam>
+   <methodparam><type>RdKafka\Topic|null</type> <parameter>only_topic</parameter></methodparam>
    <methodparam><type>int</type><parameter>timeout_ms</parameter></methodparam>
   </methodsynopsis>
   <para>
@@ -32,7 +32,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><parameter>only_topic</parameter> (<classname>RdKafkaTopic</classname>)</term>
+    <term><parameter>only_topic</parameter> (<classname>RdKafka\Topic|null</classname>)</term>
     <listitem>
      <para>
       When non-null, only request info about this topic
