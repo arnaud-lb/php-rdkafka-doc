@@ -882,7 +882,7 @@
    </varlistentry>
    <varlistentry xml:id="constant.rd-kafka-msg-partitioner-murmur2-random">
     <term>
-     <constant>RD_KAFKA_MSG_PARTITIONER_CONSISTENT</constant>
+     <constant>RD_KAFKA_MSG_PARTITIONER_MURMUR2_RANDOM</constant>
      (<type>integer</type>)
     </term>
     <listitem>
