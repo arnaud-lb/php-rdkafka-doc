@@ -14,7 +14,7 @@
    <methodparam><type>callable</type><parameter>callback</parameter></methodparam>
   </methodsynopsis>
   <para>
-   Set error callback. The error callback is used by librdkafka to signal ciritcal errors back to the application.
+   Set error callback. The error callback is used by librdkafka to signal critical errors back to the application.
   </para>
 
  </refsect1>
