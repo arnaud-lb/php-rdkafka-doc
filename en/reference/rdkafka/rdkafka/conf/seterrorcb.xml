@@ -30,12 +30,7 @@
       <programlisting role="php">
 <![CDATA[
 <?php
-/**
- * @param object $kafka
- * @param int $err
- * @param string $reason
- */
-function ($kafka, $err, $reason);
+function (RdKafka\KafkaConsumer $kafka, int $err, string $reason);
 ]]>
       </programlisting>
      </para>

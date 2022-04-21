@@ -50,9 +50,9 @@
 /**
  * @param RdKafka\KafkaConsumer $kafka
  * @param int $err
- * @param array $partitions
+ * @param RdKafka\TopicPartition[] $partitions
  */
-function (RdKafka\KafkaConsumer $kafka, $err, $partitions);
+function (RdKafka\KafkaConsumer $kafka, int $err, array $partitions);
 ]]>
       </programlisting>
       The <parameter>err</parameter> parameter is set to either <constant>RD_KAFKA_RESP_ERR__ASSIGN_PARTITIONS</constant> or <constant>RD_KAFKA_RESP_ERR__REVOKE_PARTITIONS</constant> (or an unexpected error). The <parameter>partitions</parameter> parameter is an array of <classname>RdKafka\TopicPartition</classname>, representing the full partition set that was either assigned or revoked.
