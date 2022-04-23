@@ -38,7 +38,7 @@
    ) : <span class="type"><span class="type void">void</span></span></div>
 
   <p class="para rdfs-comment">
-   Set error callback. The error callback is used by librdkafka to signal ciritcal errors back to the application.
+   Set error callback. The error callback is used by librdkafka to signal critical errors back to the application.
   </p>
 
  </div>
@@ -55,10 +55,23 @@
     <dd>
 
      <p class="para">
-      A <span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> with the following signature:
+      A <span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> with one of the following signatures.
+     </p>
+     <p class="para">
+      When used with a <a href="class.rdkafka-kafkaconsumer.html" class="classname">RdKafka\KafkaConsumer</a> instance:
       <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;(</span><span style="color: #0000BB">RdKafka</span><span style="color: #007700">\</span><span style="color: #0000BB">KafkaConsumer&nbsp;$kafka</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">int&nbsp;$err</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">string&nbsp;$reason</span><span style="color: #007700">);</span>
+</span>
+</code></div>
+      </div>
+
+     </p>
+     <p class="para">
+      When used with a <a href="class.rdkafka-producer.html" class="classname">RdKafka\Producer</a> instance:
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;(</span><span style="color: #0000BB">RdKafka</span><span style="color: #007700">\</span><span style="color: #0000BB">Producer&nbsp;$kafka</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">int&nbsp;$err</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">string&nbsp;$reason</span><span style="color: #007700">);</span>
 </span>
 </code></div>
       </div>
