@@ -14,7 +14,7 @@
    <methodparam><type>callable</type><parameter>callback</parameter></methodparam>
   </methodsynopsis>
   <para>
-   Set error callback. The error callback is used by librdkafka to signal ciritcal errors back to the application.
+   Set error callback. The error callback is used by librdkafka to signal critical errors back to the application.
   </para>
 
  </refsect1>
@@ -26,11 +26,23 @@
     <term><parameter>callback</parameter> (<type>callable</type>)</term>
     <listitem>
      <para>
-      A <type>callable</type> with the following signature:
+      A <type>callable</type> with one of the following signatures.
+     </para>
+     <para>
+      When used with a <classname>RdKafka\KafkaConsumer</classname> instance:
       <programlisting role="php">
 <![CDATA[
 <?php
 function (RdKafka\KafkaConsumer $kafka, int $err, string $reason);
+]]>
+      </programlisting>
+     </para>
+     <para>
+      When used with a <classname>RdKafka\Producer</classname> instance:
+      <programlisting role="php">
+<![CDATA[
+<?php
+function (RdKafka\Producer $kafka, int $err, string $reason);
 ]]>
       </programlisting>
      </para>
