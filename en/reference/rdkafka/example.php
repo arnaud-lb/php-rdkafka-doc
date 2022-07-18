@@ -11,6 +11,9 @@ $conf->set('group.id', 'myConsumerGroup');
 // Initial list of Kafka brokers
 $conf->set('metadata.broker.list', '127.0.0.1:9093');
 
+// Emit EOF event when reaching the end of a partition
+$conf->set('enable.partition.eof', 'true');
+
 $conf->setRebalanceCb(function ($rk, $err, $partitions) {
     var_dump(rd_kafka_err2str($err), $partitions);
     switch ($err) {
