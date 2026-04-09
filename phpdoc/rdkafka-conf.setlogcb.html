@@ -85,6 +85,15 @@
   </p>
   <blockquote class="note"><p><strong class="note">Note</strong>: 
    <p class="para">
+    To ensure that logs are received by the callback, it is required to call
+    <span class="function"><a href="rdkafka.poll.html" class="function">RdKafka::poll()</a></span> at regular intervals.
+    <span class="function"><a href="rdkafka.flush.html" class="function">RdKafka::flush()</a></span> must be called before the
+    instance is destroyed, otherwise outstanding log messages may be silently
+    discarded.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   <p class="para">
     HINT: The extension takes care of setting <strong><code>log.queue</code></strong> to <strong><code>true</code></strong> in <span class="classname"><a href="class.rdkafka-conf.html" class="classname">RdKafka\Conf</a></span> which is needed for this.
    </p>
   </p></blockquote>
