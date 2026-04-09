@@ -16,6 +16,12 @@
         <para>
             Set statistics callback.
         </para>
+        <para>
+            The statistics callback is triggered from
+            <function>RdKafka::poll</function> every
+            <literal>statistics.interval.ms</literal>
+            (needs to be configured separately).
+        </para>
 
     </refsect1>
 

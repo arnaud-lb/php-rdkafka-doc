@@ -18,6 +18,15 @@
   </para>
   <note>
    <para>
+    To ensure that logs are received by the callback, it is required to call
+    <function>RdKafka::poll</function> at regular intervals.
+    <function>RdKafka::flush</function> must be called before the
+    instance is destroyed, otherwise outstanding log messages may be silently
+    discarded.
+   </para>
+  </note>
+  <note>
+   <para>
     HINT: The extension takes care of setting <constant>log.queue</constant> to <constant>true</constant> in <classname>RdKafka\Conf</classname> which is needed for this.
    </para>
   </note>
