@@ -9,10 +9,9 @@ then
 	PHP=$(which php 2>/dev/null)
 fi
 
-# Sets the path to PHD from environment or use which to discover it
 if [ "$PHD" == "" ];
 then
-	PHD=$(which phd 2>/dev/null)
+	PHD="$PHP /phd/render.php"
 fi
 
 # Sets the browser application from environment or falls back on open if it is found
@@ -28,21 +27,11 @@ then
 	exit 1
 fi
 
-# Test for executability of PHD
-if [ ! -x "$PHD" ];
-then
-    echo "Cannot execute $PHD, is PHD installed ?"
-    exit 2
-fi
-
 # Configure Documentation
 $PHP doc-base/configure.php  --enable-xml-details --with-partial=book.rdkafka
 
 # Generate Documentation
-$PHD --docbook doc-base/.manual.book.rdkafka.xml --package PHP --format xhtml \
-    --css theme-base.css \
-    --css theme-medium.css \
-    --css style.css
+$PHD --docbook doc-base/.manual.book.rdkafka.xml --package PHP --format xhtml
 
 # Opens a browser if it is appropriate to do so
 if [ "$BROWSER" != "" ];
