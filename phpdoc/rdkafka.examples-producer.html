@@ -1,29 +1,74 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Producer</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+    <!DOCTYPE HTML>
+    <html>
+     <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <style>
+        .navbar__local {
+          flex-grow: 1;
+          display: grid;
+          grid-auto-flow: column;
+          grid-auto-columns: 1fr min-content 1fr;
+          margin: 0;
+          height: 100%;
+          
+          .navbar__item {
+            align-content: center;
+          }
+          .navbar__link {
+            display: inline;
+          }
+          .search {
+            text-align: center;
+          }
+          .next {
+            text-align: right;
+          }
+        }
+      </style>
+      <title>Producer</title>
+      <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
- </head>
- <body class="docs"><div class="navbar navbar-fixed-top">
-  <div class="navbar-inner clearfix">
-    <ul class="nav" style="width: 100%">
-      <li style="float: left;"><a href="rdkafka.examples-low-level-consumer-multi.html">« Low level consumer: Multiple topics/partitions</a></li>
-      <li style="float: right;"><a href="rdkafka.examples-transactional-producer.html">Transactional producer »</a></li>
-    </ul>
-  </div>
-</div>
-<div id="breadcrumbs" class="clearfix">
-  <ul class="breadcrumbs-container">
-    <li><a href="index.html">PHP Manual</a></li>
-    <li><a href="rdkafka.examples.html">Examples</a></li>
-    <li>Producer</li>
-  </ul>
-</div>
-<div id="layout">
-  <div id="layout-content"><div id="rdkafka.examples-producer" class="section">
+     </head>
+     <body class="docs">    <div class="navbar navbar-fixed-top">
+      <div class="navbar__inner clearfix">
+          <ul class="navbar__local">
+            <li class="navbar__item prev"><a href="rdkafka.examples-low-level-consumer-multi.html" class="navbar__link">« Low level consumer: Multiple topics/partitions</a></li>
+            <li class="navbar__item search">
+              <!-- Desktop encanced search -->
+              <button
+                id="navbar__search-button"
+                class="navbar__search-button"
+                hidden
+              >
+                    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        width="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    >
+    <circle cx="11" cy="11" r="8"></circle>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+                Search
+              </button>
+            </li>
+            <li class="navbar__item next"><a href="rdkafka.examples-transactional-producer.html" class="navbar__link">Transactional producer »</a></li>
+          </ul>
+      </div>
+    </div>    <div id="breadcrumbs" class="clearfix">
+      <ul class="breadcrumbs-container">
+        <li><a href="index.html">PHP Manual</a></li>
+        <li><a href="rdkafka.examples.html">Examples</a></li>
+        <li>Producer</li>
+      </ul>
+    </div>    <div id="layout">
+      <div id="layout-content"><div id="rdkafka.examples-producer" class="section">
   <h2 class="title">Producer</h2>
   <p class="para">
    This example shows how to use the <a href="" class="link">producer</a>.
@@ -33,13 +78,38 @@
               example below. Without proper shutdown, messages can get lost.
           </p>
       </p></blockquote>
-   <div class="example" id="example-5">
+   <div class="example" id="example-1">
     <p><strong>Example #1 Producer example</strong></p>
     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$conf&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">RdKafka</span><span style="color: #007700">\</span><span style="color: #0000BB">Conf</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$conf</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #DD0000">'metadata.broker.list'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'localhost:9092'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//If&nbsp;you&nbsp;need&nbsp;to&nbsp;produce&nbsp;exactly&nbsp;once&nbsp;and&nbsp;want&nbsp;to&nbsp;keep&nbsp;the&nbsp;original&nbsp;produce&nbsp;order,&nbsp;uncomment&nbsp;the&nbsp;line&nbsp;below<br />//$conf-&gt;set('enable.idempotence',&nbsp;'true');<br /><br /></span><span style="color: #0000BB">$producer&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">RdKafka</span><span style="color: #007700">\</span><span style="color: #0000BB">Producer</span><span style="color: #007700">(</span><span style="color: #0000BB">$conf</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$topic&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$producer</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">newTopic</span><span style="color: #007700">(</span><span style="color: #DD0000">"test"</span><span style="color: #007700">);<br /><br />for&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$topic</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">produce</span><span style="color: #007700">(</span><span style="color: #0000BB">RD_KAFKA_PARTITION_UA</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Message&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #DD0000">"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$producer</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">poll</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br />}<br /><br />for&nbsp;(</span><span style="color: #0000BB">$flushRetries&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$flushRetries&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$flushRetries</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$producer</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">flush</span><span style="color: #007700">(</span><span style="color: #0000BB">10000</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">RD_KAFKA_RESP_ERR_NO_ERROR&nbsp;</span><span style="color: #007700">===&nbsp;</span><span style="color: #0000BB">$result</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />if&nbsp;(</span><span style="color: #0000BB">RD_KAFKA_RESP_ERR_NO_ERROR&nbsp;</span><span style="color: #007700">!==&nbsp;</span><span style="color: #0000BB">$result</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;\</span><span style="color: #0000BB">RuntimeException</span><span style="color: #007700">(</span><span style="color: #DD0000">'Was&nbsp;unable&nbsp;to&nbsp;flush,&nbsp;messages&nbsp;might&nbsp;be&nbsp;lost!'</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
+<div class="phpcode"><pre><code style="color: #000000"><span style="color: #0000BB">&lt;?php
+
+$conf </span><span style="color: #007700">= new </span><span style="color: #0000BB">RdKafka\Conf</span><span style="color: #007700">();
+</span><span style="color: #0000BB">$conf</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #DD0000">'metadata.broker.list'</span><span style="color: #007700">, </span><span style="color: #DD0000">'localhost:9092'</span><span style="color: #007700">);
+
+</span><span style="color: #FF8000">//If you need to produce exactly once and want to keep the original produce order, uncomment the line below
+//$conf-&gt;set('enable.idempotence', 'true');
+
+</span><span style="color: #0000BB">$producer </span><span style="color: #007700">= new </span><span style="color: #0000BB">RdKafka\Producer</span><span style="color: #007700">(</span><span style="color: #0000BB">$conf</span><span style="color: #007700">);
+
+</span><span style="color: #0000BB">$topic </span><span style="color: #007700">= </span><span style="color: #0000BB">$producer</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">newTopic</span><span style="color: #007700">(</span><span style="color: #DD0000">"test"</span><span style="color: #007700">);
+
+for (</span><span style="color: #0000BB">$i </span><span style="color: #007700">= </span><span style="color: #0000BB">0</span><span style="color: #007700">; </span><span style="color: #0000BB">$i </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">10</span><span style="color: #007700">; </span><span style="color: #0000BB">$i</span><span style="color: #007700">++) {
+    </span><span style="color: #0000BB">$topic</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">produce</span><span style="color: #007700">(</span><span style="color: #0000BB">RD_KAFKA_PARTITION_UA</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #DD0000">"Message </span><span style="color: #0000BB">$i</span><span style="color: #DD0000">"</span><span style="color: #007700">);
+    </span><span style="color: #0000BB">$producer</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">poll</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">);
+}
+
+for (</span><span style="color: #0000BB">$flushRetries </span><span style="color: #007700">= </span><span style="color: #0000BB">0</span><span style="color: #007700">; </span><span style="color: #0000BB">$flushRetries </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">10</span><span style="color: #007700">; </span><span style="color: #0000BB">$flushRetries</span><span style="color: #007700">++) {
+    </span><span style="color: #0000BB">$result </span><span style="color: #007700">= </span><span style="color: #0000BB">$producer</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">flush</span><span style="color: #007700">(</span><span style="color: #0000BB">10000</span><span style="color: #007700">);
+    if (</span><span style="color: #0000BB">RD_KAFKA_RESP_ERR_NO_ERROR </span><span style="color: #007700">=== </span><span style="color: #0000BB">$result</span><span style="color: #007700">) {
+        break;
+    }
+}
+
+if (</span><span style="color: #0000BB">RD_KAFKA_RESP_ERR_NO_ERROR </span><span style="color: #007700">!== </span><span style="color: #0000BB">$result</span><span style="color: #007700">) {
+    throw new </span><span style="color: #0000BB">\RuntimeException</span><span style="color: #007700">(</span><span style="color: #DD0000">'Was unable to flush, messages might be lost!'</span><span style="color: #007700">);
+}
+
+</span><span style="color: #0000BB">?&gt;</span></code></pre></div>
     </div>
 
    </div>
@@ -47,15 +117,95 @@
      <p class="para">
          If for some reason you wan&#039;t to purge messages that are queued to be sent to the producer or inflight,
          you can use <a href="rdkafka.purge.html" class="link">purge</a> to do so.
-         <div class="example" id="example-6">
+         <div class="example" id="example-2">
              <p><strong>Example #2 Purge example</strong></p>
              <div class="example-contents">
-                 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;Purge&nbsp;messages&nbsp;not&nbsp;yet&nbsp;sent&nbsp;to&nbsp;the&nbsp;broker&nbsp;(this&nbsp;is&nbsp;a&nbsp;safe&nbsp;operation&nbsp;to&nbsp;do)<br /></span><span style="color: #0000BB">$rk</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">purge</span><span style="color: #007700">(</span><span style="color: #0000BB">RD_KAFKA_PURGE_F_QUEUE</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;You&nbsp;can&nbsp;also&nbsp;purge&nbsp;messages&nbsp;that&nbsp;are&nbsp;inflight,&nbsp;not&nbsp;that&nbsp;this&nbsp;poses&nbsp;risks<br />//&nbsp;Purge&nbsp;messages&nbsp;in-flight&nbsp;to&nbsp;or&nbsp;from&nbsp;the&nbsp;broker.<br />//&nbsp;Purging&nbsp;these&nbsp;messages&nbsp;will&nbsp;void&nbsp;any&nbsp;future&nbsp;acknowledgements&nbsp;from&nbsp;the<br />//&nbsp;broker,&nbsp;making&nbsp;it&nbsp;impossible&nbsp;for&nbsp;the&nbsp;application&nbsp;to&nbsp;know&nbsp;if&nbsp;these<br />//&nbsp;messages&nbsp;were&nbsp;successfully&nbsp;delivered&nbsp;or&nbsp;not.<br />//&nbsp;Retrying&nbsp;these&nbsp;messages&nbsp;may&nbsp;lead&nbsp;to&nbsp;duplicates.<br /></span><span style="color: #0000BB">$rk</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">purge</span><span style="color: #007700">(</span><span style="color: #0000BB">RD_KAFKA_PURGE_F_INFLIGHT</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
+                 <div class="phpcode"><pre><code style="color: #000000"><span style="color: #0000BB">&lt;?php
+
+</span><span style="color: #FF8000">// Purge messages not yet sent to the broker (this is a safe operation to do)
+</span><span style="color: #0000BB">$rk</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">purge</span><span style="color: #007700">(</span><span style="color: #0000BB">RD_KAFKA_PURGE_F_QUEUE</span><span style="color: #007700">);
+
+</span><span style="color: #FF8000">// You can also purge messages that are inflight, not that this poses risks
+// Purge messages in-flight to or from the broker.
+// Purging these messages will void any future acknowledgements from the
+// broker, making it impossible for the application to know if these
+// messages were successfully delivered or not.
+// Retrying these messages may lead to duplicates.
+</span><span style="color: #0000BB">$rk</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">purge</span><span style="color: #007700">(</span><span style="color: #0000BB">RD_KAFKA_PURGE_F_INFLIGHT</span><span style="color: #007700">);
+</span><span style="color: #0000BB">?&gt;</span></code></pre></div>
              </div>
 
          </div>
      </p>
- </div></div></div></body></html>
+ </div></div></div><script type="text/javascript" src="search-combined.js"></script><script type="text/javascript" src="js/67ae199ee27cc87120cab9ba49d1b776-FuzzySearch.min.js"></script><script type="text/javascript" src="js/9157b6d47293b9dc904a673c0a386f8d-search.js"></script>    <div id="search-modal__backdrop" class="search-modal__backdrop">
+      <div
+        role="dialog"
+        aria-label="Search modal"
+        id="search-modal"
+        class="search-modal"
+      >
+        <div class="search-modal__header">
+          <div class="search-modal__form">
+            <div class="search-modal__input-icon">
+              <!-- https://feathericons.com search -->
+              <svg xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                width="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <input
+              type="search"
+              id="search-modal__input"
+              class="search-modal__input"
+              placeholder="Search docs"
+              aria-label="Search docs"
+            />
+          </div>
+    
+          <button aria-label="Close" class="search-modal__close">
+            <!-- https://pictogrammers.com/library/mdi/icon/close/ -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              width="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+            </svg>
+          </button>
+        </div>
+        <div
+          role="listbox"
+          aria-label="Search results"
+          id="search-modal__results"
+          class="search-modal__results"
+        ></div>
+        <div class="search-modal__helper-text">
+          <div>
+            <kbd>↑</kbd> and <kbd>↓</kbd> to navigate •
+            <kbd>Enter</kbd> to select •
+            <kbd>Esc</kbd> to close • <kbd>/</kbd> to open
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            /*{{{Search Modal*/
+            const language = 'local';
+            initSearchModal();
+            initPHPSearch(language).then((searchCallback) => {
+                initSearchUI({language, searchCallback, limit: 30});
+            });
+            /*}}}*/
+        });
+    </script></body></html>
